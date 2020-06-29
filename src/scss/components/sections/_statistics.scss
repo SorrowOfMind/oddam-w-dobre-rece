@@ -1,0 +1,24 @@
+.statistics {
+    background: url('../../../assets/3\ Columns\ Background.png');
+    @include flexbox(row, space-between, stretch);
+    width: 100%;
+}
+
+.statistic__col {
+    padding: 4rem 8%;
+    text-align: center;
+    color: $color-font-main;
+    .statistic__num {
+        font-size: 7rem;
+        font-weight: 300;
+        color: $color-font-alt2;
+    }
+    .statistic__dscr {
+        font-size: 1.6rem;
+    }
+    .statistic__text {
+        font-size: 1.3rem;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+}

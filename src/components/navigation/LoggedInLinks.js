@@ -11,6 +11,7 @@ const LoggedInLinks = () => {
     const handleLogOut = () => {
         dispatch(logOut);
     }
+    
     return (
         <>
             <li className="link-in">Cześć {auth.email}</li>

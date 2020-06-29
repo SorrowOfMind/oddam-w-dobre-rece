@@ -1,0 +1,52 @@
+.header {
+    background-color: transparent;
+    color: $color-font-main;
+    height: 85vh;
+    overflow: visible;
+    background-image: url('../../../assets/Hero\ Image.png');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: -50% top;
+}
+
+.header__content {
+    width: 50%;
+    float: right;
+    text-align: center;
+    @include fluid-font(14px, 30px);
+    padding: 12% 4rem;
+}
+
+.header__titles {
+    position: relative;
+    padding: 3rem 0 10rem 0;
+    &:after {
+        content: url('../../../assets/Decoration.svg');
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%);
+    }
+}
+
+.btn {
+    background-color: #fff;
+    font-weight: 300;
+    width: 20rem;
+    font-size: 2.6rem;
+    padding: 1rem 2rem;
+    border: 1px solid $color-font-main;
+}
+
+.header__btn:nth-child(1) {
+    margin-right: 2.5rem;
+}
+
+.header__btn, .steps__btn {
+    box-shadow: none;
+    transition: box-shadow .2s, color .2s;
+    &:hover {
+    box-shadow: inset 0 0 0 50px $color-font-main;
+    color: $color-border-yellow;
+    }
+}

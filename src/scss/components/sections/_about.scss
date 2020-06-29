@@ -1,0 +1,23 @@
+.about {
+    background-image: url('../../../assets/people.png');
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position: right top;
+}
+.about__content {
+    width: 50%;
+    color: $color-font-main;
+    padding: 6rem 1rem 20rem 1rem;
+    background-color: $color-bg;
+    background-image: url('../../../assets/signature.svg');
+    background-repeat: no-repeat;
+    background-position: bottom 4rem right 10rem;
+    background-size: 15rem;
+    .about__text {
+        text-align: center;
+        font-size: 2.4rem;
+        @include fluid-font(14px, 24px);
+        padding: 0 10rem;
+       
+    }
+}
