@@ -1,6 +1,7 @@
 .statistics {
     background: url('../../../assets/3\ Columns\ Background.png');
     @include flexbox(row, space-between, stretch);
+    width: 100%;
 }
 
 .statistic__col {
