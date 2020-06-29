@@ -1,0 +1,98 @@
+.form-wrapper {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    @include flexbox(row, center, center);
+    color: $color-font-main;
+}
+
+.form__title {
+    font-size: 3rem;
+    position: relative;
+    padding: 4rem 6rem 10rem 6rem;
+    &:after {
+        content: url('../../../assets/Decoration.svg');
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translateX(-50%);
+    }
+}
+
+.form {
+    background-color: $color-bg;
+    padding: 3rem 4rem;
+    position: relative;
+    [class^='form__label'] {
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: block;
+        padding: 1.5rem 0;
+        
+    }
+    .form__label-1 {
+        padding-top: 0;
+    }
+    .form__input {
+        border-bottom: 1px solid $color-font-alt;
+        width: 100%;
+        padding: 0.3rem;
+        font-size: 1.4rem;
+        color: inherit;
+    }
+    .form__input_last {
+        margin-bottom: 1rem;
+    }
+}
+
+.form__btns {
+    font-size: 1.6rem;
+    color: $color-font-alt;
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130%;
+    @include flexbox(row, space-between,center);
+    .form__link:hover {
+        color: $color-font-main;
+    }
+    .form__submit-btn {
+        color: $color-font-alt;
+        padding: 0.6rem 1rem;
+        border: 1px solid $color-font-alt;
+        position: relative;
+        overflow: hidden;
+        transition: color .2s;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $color-font-main;
+            top: 0;
+            left: -100%;
+            transition: left .2s;
+            z-index: 0;
+        }
+        &:hover:before {
+            left: 0;
+        }
+        &:hover {
+            color: $color-border-yellow;
+        }
+        .btn__text {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
+.form__login_btns {
+    bottom: -35%;
+}
+
+.form__error {
+    color: red;
+    width: max-content;
+}
