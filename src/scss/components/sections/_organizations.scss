@@ -1,0 +1,30 @@
+.organizations {
+    color: $color-font-main;
+}
+
+.organization-types {
+    font-size: 1.6rem;
+    @include flexbox(row, space-between, stretch);
+    width: 50%;
+    margin: 0 auto;
+}
+
+[class^="organization-type-"] {
+    width: 14rem;
+    text-align: center;
+    padding: 1rem;
+    @include flexbox(row, center, center);
+    cursor: pointer;
+}
+
+.organizations__text {
+    width: 40%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.active-type {
+    border: 1px solid $color-font-alt;
+}

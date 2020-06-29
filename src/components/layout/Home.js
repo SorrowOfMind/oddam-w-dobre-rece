@@ -4,6 +4,7 @@ import Header from './Header';
 import NumbersThreeCols from './PlatformStatistics';
 import Steps from './Steps';
 import About from './About';
+import Organizations from '../organizations/Organizations';
 
 const Home = () => {
     return (
@@ -12,8 +13,9 @@ const Home = () => {
             <NumbersThreeCols />
             <Steps />
             <About />
+            <Organizations />
         </>
     )
 }
 
-export default Home
+export default Home;
