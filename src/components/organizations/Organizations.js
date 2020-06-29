@@ -9,24 +9,44 @@ import { firestoreConnect } from 'react-redux-firebase';
         this.state={
             recordsPerPage: 3,
             currentPage: 1,
-            currentRecords: null
+            currentCollection: null
         }
-        this.lastRecordIndex = this.state.currentPage * this.state.recordsPerPage;
-        this.firstRecordIndex = this.lastRecordIndex - this.state.recordsPerPage;
-        
+    }
+  
+    componentDidUpdate = (prevProps, prevState) => {
+        if(prevProps.foundations !== this.props.foundations) {
+            this.setState({currentCollection: this.props.foundations})
+        }
+        if (prevState.currentPage !== this.state.currentPage) {
+            this.splitCollection(this.currentCollection);
+        }
     }
 
+    changeCollection = e => {
+        this.setState({currentCollection: this.props[e.target.id]})
+    }
+
+    splitCollection = (collection) => {
+        this.currentRecords = [...collection];
+        this.lastRecordIndex = this.state.currentPage * this.state.recordsPerPage;
+        this.firstRecordIndex = this.lastRecordIndex - this.state.recordsPerPage;
+        return this.currentRecords.slice(this.firstRecordIndex, this.lastRecordIndex);
+    }
+
+    paginate = (pageNr) => this.setState({currentPage: pageNr});
+    
     render() {
         const {foundations, ngos, locals} = this.props;
-        const {currentRecords} = this.state;
-        
+        const {currentCollection} = this.state;
+
+        console.log(this.state.currentCollection);
         return (
             <section className="organizations" name="organizations">
                 <h2 className="title organizations__title">Komu pomagamy?</h2>
                 <div className="organization-types">
-                    <div className="organization-type-1 active-type">Fundacjom</div>
-                    <div className="organization-type-2">Organizacjom pozarządowym</div>
-                    <div className="organization-type-3">Lokalnym zbiórkom</div>
+                    <div className="organization-type-1 active-type" id="foundations" onClick={this.changeCollection}>Fundacjom</div>
+                    <div className="organization-type-2" id="ngos" onClick={this.changeCollection}>Organizacjom pozarządowym</div>
+                    <div className="organization-type-3" id="locals" onClick={this.changeCollection}>Lokalnym zbiórkom</div>
                 </div>
                 <p className="organizations__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
             </section>
