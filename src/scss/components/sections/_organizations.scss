@@ -27,32 +27,48 @@
 }
 
 .active-type {
-    border: 1px solid $color-font-alt;
+    border: 1px solid $color-border-grey;
 }
 
-.oraganizations-item {
-    border-bottom: 1px solid $color-font-alt;
-    padding: 2rem 1rem 0 0;
+.organizations-list {
+    padding-bottom: 2rem;
+}
+
+.organizations-item {
+    position: relative;
+    line-height: 1.5;
+    padding: 2rem 1rem 1rem 0;
+    font-family: $font-alt;
+    font-weight: 300;
     .organization-name {
         font-size: 1.8rem;
     }
     .organization-goal {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     .organization-items {
-        float: right;
-        font-size: 1.4rem;
-        line-height:100%;
+        font-size: 1.2rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
+}
+
+.organizations-item:not(:last-child) {
+    border-bottom: 1px solid $color-font-alt;
 }
 
 .pagination {
     margin: 0 auto;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     .pageNum {
         display: inline-block;
         padding: 1rem;
         cursor: pointer;
+    }
+    .pageNum:not(:last-child) {
+        margin-right: 1rem;
     }
 }

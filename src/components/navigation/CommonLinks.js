@@ -9,7 +9,7 @@ const CommonLinks = () => {
             <ScrollLink to="steps" spy={true} smooth={true} className="common-link"><li>O co chodzi?</li></ScrollLink>
             <ScrollLink to="about" spy={true} smooth={true} className="common-link"><li>O nas</li></ScrollLink>
             <ScrollLink to="organizations" spy={true} smooth={true} className="common-link"><li>Fundacja i organizacja</li></ScrollLink>
-            <li className="common-link"><span className="common-link__content">Kontakt</span></li>
+            <ScrollLink to="contact" spy={true} smooth={true} className="common-link"><li>Kontakt</li></ScrollLink>
         </ul>
     )
 }

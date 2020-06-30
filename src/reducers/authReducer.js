@@ -8,7 +8,6 @@ const initialState = {
 const authReducer = (state=initialState, action) => {
     switch(action.type) {
         case SIGNUP:
-            console.log('user created');
             return {
                 ...state,
                 authError: null,
@@ -33,7 +32,6 @@ const authReducer = (state=initialState, action) => {
                 loginError: 'E-mail or passowrd are incorrect.'
             }
         case LOGOUT:
-            console.log('logging out')
             return state;
         default:
             return state;

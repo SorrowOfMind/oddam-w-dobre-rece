@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-const Pagination = ({paginate, numOfRecords, recordsPerPage}) => {
-    const pages = [];
+const Pagination = ({paginate, numOfRecords, recordsPerPage, currentPage}) => {
     const pagesTotal = Math.ceil(numOfRecords/recordsPerPage);
-    for(let i = 1; i <= pagesTotal; i++) {
-        pages.push(i)
-    }
+    const pages = Array.from({length: pagesTotal}, (_, idx) => idx + 1);
+
     return (
         <ul className="pagination">
-            {numOfRecords > 3 && pages.map(page => <li onClick={paginate} key={page} className="pageNum">{page}</li>)}
+            {numOfRecords > 3 && 
+                pages.map(page => <li onClick={() => paginate(page)} key={page} className={currentPage === page ? "pageNum active-type" : "pageNum"}>{page}</li>)}
         </ul>
     )
 }

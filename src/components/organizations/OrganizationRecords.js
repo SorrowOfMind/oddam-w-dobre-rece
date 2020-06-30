@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const OrganizationRecords = ({collection}) => {
+const OrganizationRecords = ({records}) => {
     return (
-        <ul className="oraganizations-list container">
-            {collection.map(record => (
-                <li key={record.id} className="oraganizations-item clearfix">
+        <ul className="organizations-list container">
+            {records.map(record => (
+                <li key={record.id} className="organizations-item clearfix">
                     <p className="organization-name">{record.name}</p>
                     <p className="organization-goal">Cel i misja: {record.goal}</p>
                     <p className="organization-items">{record.items.join(', ')}</p>
@@ -16,7 +16,7 @@ const OrganizationRecords = ({collection}) => {
 }
 
 OrganizationRecords.propTypes = {
-    collection: PropTypes.array.isRequired
+    records: PropTypes.array.isRequired
 }
 
 export default OrganizationRecords;
