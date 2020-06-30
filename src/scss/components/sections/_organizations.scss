@@ -1,5 +1,6 @@
 .organizations {
     color: $color-font-main;
+    padding: 0 8%;;
 }
 
 .organization-types {
@@ -27,4 +28,31 @@
 
 .active-type {
     border: 1px solid $color-font-alt;
+}
+
+.oraganizations-item {
+    border-bottom: 1px solid $color-font-alt;
+    padding: 2rem 1rem 0 0;
+    .organization-name {
+        font-size: 1.8rem;
+    }
+    .organization-goal {
+        font-size: 1.4rem;
+    }
+    .organization-items {
+        float: right;
+        font-size: 1.4rem;
+        line-height:100%;
+    }
+}
+
+.pagination {
+    margin: 0 auto;
+    font-size: 1.4rem;
+    text-align: center;
+    .pageNum {
+        display: inline-block;
+        padding: 1rem;
+        cursor: pointer;
+    }
 }

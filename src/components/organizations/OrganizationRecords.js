@@ -1,11 +1,22 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const OrganizationRecords = () => {
+const OrganizationRecords = ({collection}) => {
     return (
-        <div>
-            
-        </div>
+        <ul className="oraganizations-list container">
+            {collection.map(record => (
+                <li key={record.id} className="oraganizations-item clearfix">
+                    <p className="organization-name">{record.name}</p>
+                    <p className="organization-goal">Cel i misja: {record.goal}</p>
+                    <p className="organization-items">{record.items.join(', ')}</p>
+                </li>
+            ))}
+        </ul>
     )
 }
 
-export default OrganizationRecords
+OrganizationRecords.propTypes = {
+    collection: PropTypes.array.isRequired
+}
+
+export default OrganizationRecords;
