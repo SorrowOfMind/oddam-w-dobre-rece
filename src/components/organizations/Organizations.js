@@ -1,71 +1,70 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {compose} from 'redux';
-import { firestoreConnect } from 'react-redux-firebase';
+import React, {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
+import {useFirestoreConnect} from 'react-redux-firebase';
 
- class Organizations extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            recordsPerPage: 3,
-            currentPage: 1,
-            currentCollection: null
-        }
-    }
-  
-    componentDidUpdate = (prevProps, prevState) => {
-        if(prevProps.foundations !== this.props.foundations) {
-            this.setState({currentCollection: this.props.foundations})
-        }
-        if (prevState.currentPage !== this.state.currentPage) {
-            this.splitCollection(this.currentCollection);
-        }
-    }
+import OrganizationRecords from'./OrganizationRecords';
+import Pagination from './Pagination';
 
-    changeCollection = e => {
-        this.setState({currentCollection: this.props[e.target.id]})
-    }
+const Organizations = () => {
+    const [recordsPerPage, setRecordsPerPage] = useState(3);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [currentCollection, setCurrentCollection] = useState(null);
+    const [currentRecords, setCurrentRecords] = useState(null);
 
-    splitCollection = (collection) => {
-        this.currentRecords = [...collection];
-        this.lastRecordIndex = this.state.currentPage * this.state.recordsPerPage;
-        this.firstRecordIndex = this.lastRecordIndex - this.state.recordsPerPage;
-        return this.currentRecords.slice(this.firstRecordIndex, this.lastRecordIndex);
-    }
+    const foundations = useSelector(state => state.firestore.ordered.foundations);
+    const ngos = useSelector(state => state.firestore.ordered.ngos);
+    const locals = useSelector(state => state.firestore.ordered.locals);
 
-    paginate = (pageNr) => this.setState({currentPage: pageNr});
-    
-    render() {
-        const {foundations, ngos, locals} = this.props;
-        const {currentCollection} = this.state;
-
-        console.log(this.state.currentCollection);
-        return (
-            <section className="organizations" name="organizations">
-                <h2 className="title organizations__title">Komu pomagamy?</h2>
-                <div className="organization-types">
-                    <div className="organization-type-1 active-type" id="foundations" onClick={this.changeCollection}>Fundacjom</div>
-                    <div className="organization-type-2" id="ngos" onClick={this.changeCollection}>Organizacjom pozarządowym</div>
-                    <div className="organization-type-3" id="locals" onClick={this.changeCollection}>Lokalnym zbiórkom</div>
-                </div>
-                <p className="organizations__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
-            </section>
-        )
-    }
-}
-
-const mapStateToProps = state => {
-    return {
-        foundations: state.firestore.ordered.foundations,
-        ngos: state.firestore.ordered.ngos,
-        locals: state.firestore.ordered.locals
-    }
-}
-
-export default compose(
-    connect(mapStateToProps),
-    firestoreConnect([
+    useFirestoreConnect([
         {collection: 'foundations'},
         {collection: 'ngos'},
-        {collection: 'locals'}])
-)(Organizations);
+        {collection: 'locals'}
+    ]);
+
+    useEffect(() => {
+        if (foundations) setCurrentCollection(foundations);
+    }, [foundations]);
+
+    useEffect(() => {
+        if (currentCollection) splitCollection(currentCollection)
+    }, [currentCollection, currentPage])
+
+    const changeCollection = e => {
+        const {id} = e.target;
+        setCurrentCollection(id === 'ngos' ? ngos : id === 'locals' ? locals : foundations );
+        setCurrentPage(1);
+    };
+
+    const splitCollection = (collection) => {
+        const lastIndex = currentPage * recordsPerPage;
+        const firstIndex = lastIndex - recordsPerPage;
+        const splitArr = collection.slice(firstIndex, lastIndex);
+        setCurrentRecords(splitArr);
+    }
+
+    const paginate = pageNr => setCurrentPage(pageNr);
+    
+    return (
+        
+        <section className="organizations" name="organizations">
+                <h2 className="title organizations__title">Komu pomagamy?</h2>
+                <div className="organization-types">
+                    <div className={currentCollection === foundations ? 'organization-type-1 active-type' : "organization-type-1"} id="foundations" onClick={changeCollection}>Fundacjom</div>
+                    <div className={currentCollection === ngos ? 'organization-type-2 active-type' : "organization-type-2"} id="ngos" onClick={changeCollection}>Organizacjom pozarządowym</div>
+                    <div className={currentCollection === locals ? 'organization-type-3 active-type' : "organization-type-3"} id="locals" onClick={changeCollection}>Lokalnym zbiórkom</div>
+                </div>
+                <p className="organizations__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
+                {currentRecords && 
+                    <OrganizationRecords records={currentRecords}/>}
+                {currentCollection && 
+                    <Pagination 
+                        paginate={paginate} 
+                        numOfRecords={currentCollection.length} 
+                        recordsPerPage={recordsPerPage}
+                        currentPage={currentPage}
+                    />}
+            </section>
+    )
+}
+
+export default Organizations;
