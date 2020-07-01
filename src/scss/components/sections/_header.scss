@@ -2,11 +2,12 @@
     background-color: transparent;
     color: $color-font-main;
     height: 85vh;
+    min-height: 650px;
     overflow: visible;
     background-image: url('../../../assets/Hero\ Image.png');
     background-repeat: no-repeat;
     background-size: 60%;
-    background-position: -50% bottom;
+    background-position: left -50% bottom -1rem;
 }
 
 .header__content {

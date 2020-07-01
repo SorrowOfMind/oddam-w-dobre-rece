@@ -1,0 +1,73 @@
+.footer {
+    width: 100%;
+    @include flexbox(row, flex-end, center);
+    height: 85vh;
+    background: linear-gradient(rgba(255,255,255, 0.83), rgba(255,255,255, 0.83)), url('../../../assets/bg-img.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, left bottom -6rem;
+    background-size: cover, 80% 110%;
+}
+.footer__content {
+    width: 45%;
+    padding: 0 5%;
+}
+
+.contact-form {
+    padding: 2rem 15%;
+    .form__submit-btn {
+        padding: 0.8rem 2.7rem;
+        font-size: 1.3rem;
+        float: right;
+    }
+    .input-wrapper {
+        display: inline-block;
+        padding-bottom: 2rem;
+        width: 46%;
+    }
+    .input-wrapper__name {
+        margin-right: 2.5rem;
+    }
+    .textarea-wrapper {
+        padding-bottom: 3rem;
+    }
+}
+
+.contact__label {
+    font-size: 1.4rem;
+    display: block;
+}
+
+.contact__input {
+    display: inline-block;
+    border-bottom: 2px solid $color-border-grey;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    color: inherit;
+    width: 100%;
+}
+
+.input-wrapper, .textarea-wrapper {
+    position: relative;
+}
+
+.textarea-wrapper {
+    margin-top: 2rem;
+}
+
+.contact__message {
+    display: block;
+    resize: none;
+    width: 100%;
+    height: 5rem;
+}
+
+.contact__error {
+    color: red;
+    position: absolute;
+    bottom: 0;
+    font-weight: 600;
+}
+
+.msg__error {
+    bottom: 0.8rem;
+}
