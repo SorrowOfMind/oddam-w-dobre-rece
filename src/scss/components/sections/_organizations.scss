@@ -1,6 +1,6 @@
 .organizations {
     color: $color-font-main;
-    padding: 0 8%;;
+    padding: 0 8% 3rem 8%;
 }
 
 .organization-types {
@@ -11,11 +11,68 @@
 }
 
 [class^="organization-type-"] {
+    position: relative;
     width: 14rem;
     text-align: center;
     padding: 1rem;
     @include flexbox(row, center, center);
     cursor: pointer;
+    overflow: hidden;
+
+}
+
+[class^="organization-type-"], .pageNum {
+    &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        top: 0;
+        left: 0;
+        transition: width 0.2s, height .2s;
+        box-sizing: border-box;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        bottom: 0;
+        right: 0;
+        transition: width 0.2s, height .2s;
+        box-sizing: border-box;
+    }
+    &:hover:before {
+        width: 100%;
+        height: 100%;
+        border-top-color: $color-border-grey;
+        border-left-color: $color-border-grey;
+    }
+    &:hover:after {
+        width: 100%;
+        height: 100%;
+        border-right-color: $color-border-grey;
+        border-bottom-color: $color-border-grey;
+    }
+}
+
+[class^="organization-type-"].active-type, .pageNum.active-type {
+    &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
 }
 
 .organizations__text {
@@ -31,13 +88,14 @@
 }
 
 .organizations-list {
+    padding: 0 10% 2rem 10%;
     padding-bottom: 2rem;
 }
 
 .organizations-item {
     position: relative;
     line-height: 1.5;
-    padding: 2rem 1rem 1rem 0;
+    padding: 2rem 1rem 2rem 0;
     font-family: $font-alt;
     font-weight: 300;
     .organization-name {
@@ -64,6 +122,7 @@
     font-size: 1.6rem;
     text-align: center;
     .pageNum {
+        position: relative;
         display: inline-block;
         padding: 1rem;
         cursor: pointer;

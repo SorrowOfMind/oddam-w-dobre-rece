@@ -1,4 +1,4 @@
-.steps__title, .logout__title, .about__title, .organizations__title {
+.steps__title, .logout__title, .about__title, .organizations__title, .footer__title {
     position: relative;
     text-align: center;
     @include fluid-font(14px, 30px);
@@ -20,7 +20,7 @@
 .step-wrapper {
     color: $color-font-main;
     text-align: center;
-    width: 10%;
+    width: 13%;
     padding: 0 4rem;
     .step__icon {
         width: 5rem;

@@ -1,32 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import {Formik} from 'formik';
 import {logIn} from '../../actions/authActions';
+import TextInput from '../forms/TextInput';
+
 
 const LogInForm = () => {
-    const [data, setData] = useState({email: '', password: ''});
-
     const authErr = useSelector(state => state.auth.loginError);
     const auth = useSelector(state => state.firebase.auth);
     const dispatch = useDispatch();
-
-    const handleChange = e => {
-        const {value, name} = e.target;
-        setData(prevData => {
-            return {
-                ...prevData,
-                [name]: value
-            }
-        })
-    }
-
-    const handleLogIn = e => {
-        e.preventDefault();
-        const {email, password} = data;
-        if (email && password) {
-            dispatch(logIn(data));
-        }
-    }
 
     if (auth.uid) return <Redirect to ='/' />
 
@@ -34,27 +17,31 @@ const LogInForm = () => {
         <div className="form-wrapper">
             <div className="form-inner-container">
                 <h1 className="form__title">Zaloguj się</h1>
-                <form className="form" onSubmit={handleLogIn}>
+                <Formik
+                  initialValues={{email: '', password: ''}}
+                  onSubmit={(values, {resetForm}) => {
+                      dispatch(logIn(values));
+                      resetForm(values);
+                  }}
+                >{formik => (
+                    <form className="form" onSubmit={formik.handleSubmit}>
                     <div className="input-wrapper">
-                        <label htmlFor="email" className="form__label-1">Email</label>
-                        <input
-                            className="form__input"
-                            type="email"
-                            id="email"
+                        <TextInput 
+                            label="Email"
+                            labelClass="form__label-1"
                             name="email"
-                            value={data.email}
-                            onChange={handleChange}
-                            />
+                            type="email"
+                            className="form__input"
+                        />
                     </div>
                     <div className="input-wrapper">
-                        <label htmlFor="password" className="form__label-2">Hasło</label>
-                        <input
-                            className="form__input"
+                        <TextInput 
+                            label="Hasło"
+                            labelClass="form__label-2"
                             type="password"
-                            id="password"
                             name="password"
-                            value={data.password}
-                            onChange={handleChange}/>
+                            className="form__input"
+                        />
                     </div>
                     {authErr ? <div className="form__error">{authErr}</div> : null}
                     <div className="form__btns form__login_btns">
@@ -64,6 +51,8 @@ const LogInForm = () => {
                         </button>
                     </div>
                 </form>
+                )}
+                </Formik>
             </div>
         </div>
     )

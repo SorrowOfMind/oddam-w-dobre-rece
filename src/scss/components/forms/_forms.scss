@@ -23,6 +23,7 @@
     background-color: $color-bg;
     padding: 3rem 4rem;
     position: relative;
+    position: relative;
     [class^='form__label'] {
         font-size: 1.3rem;
         font-weight: 600;
@@ -35,13 +36,11 @@
     }
     .form__input {
         border-bottom: 1px solid $color-font-alt;
+        margin-bottom: 1rem;
         width: 100%;
         padding: 0.3rem;
         font-size: 1.4rem;
         color: inherit;
-    }
-    .form__input_last {
-        margin-bottom: 1rem;
     }
 }
 
@@ -57,34 +56,36 @@
     .form__link:hover {
         color: $color-font-main;
     }
-    .form__submit-btn {
-        color: $color-font-alt;
-        padding: 0.6rem 1rem;
-        border: 1px solid $color-font-alt;
+    
+}
+
+.form__submit-btn {
+    color: $color-font-alt;
+    padding: 0.6rem 1rem;
+    border: 1px solid $color-font-alt;
+    position: relative;
+    overflow: hidden;
+    transition: color .2s;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $color-font-main;
+        top: 0;
+        left: -100%;
+        transition: left .2s;
+        z-index: 0;
+    }
+    &:hover:before {
+        left: 0;
+    }
+    &:hover {
+        color: $color-border-yellow;
+    }
+    .btn__text {
         position: relative;
-        overflow: hidden;
-        transition: color .2s;
-        &:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: $color-font-main;
-            top: 0;
-            left: -100%;
-            transition: left .2s;
-            z-index: 0;
-        }
-        &:hover:before {
-            left: 0;
-        }
-        &:hover {
-            color: $color-border-yellow;
-        }
-        .btn__text {
-            position: relative;
-            z-index: 2;
-        }
+        z-index: 2;
     }
 }
 
@@ -93,6 +94,13 @@
 }
 
 .form__error {
+    position: absolute;
+    bottom: 1rem;
     color: red;
-    width: max-content;
+    font-weight: 600;
+    padding: 0.2rem;
+}
+
+.form__error-signup {
+    bottom: -1rem;
 }
