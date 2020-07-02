@@ -13,7 +13,7 @@ const ContactForm = () => {
         const params = {
             name: values.name,
             email: values.email,
-            msg: values.msg
+            message: values.msg
         }
         const options = {
             headers: {"Content-Type": "application/json"}

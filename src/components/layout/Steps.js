@@ -8,7 +8,7 @@ import iconRefresh from '../../assets/icon-refresh.png'
 
 const Steps = () => {
     const auth = useSelector(state => state.firebase.auth);
-    const path = auth.uid ? '/' : '/login';
+    const path = auth.uid ? '/oddaj-rzeczy' : '/login';
     return (
         <section className="steps" name="steps">
             <h2 className="steps__title title">Wystarczą 4 proste kroki</h2>

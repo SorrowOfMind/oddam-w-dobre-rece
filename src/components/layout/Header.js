@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 const Header = () => {
     const auth = useSelector(state => state.firebase.auth);
-    const giveAwayPath = auth.uid ? '/' : '/login';
+    const giveAwayPath = auth.uid ? '/oddaj-rzeczy' : '/login';
     const collectionPath = auth.uid ? '/' : '/login';
     return (
         <header className="header">
