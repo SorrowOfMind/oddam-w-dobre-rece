@@ -29,7 +29,7 @@ const authReducer = (state=initialState, action) => {
             return {
                 ...state,
                 authError: action.payload,
-                loginError: 'E-mail or passowrd are incorrect.'
+                loginError: 'E-mail or password are incorrect.'
             }
         case LOGOUT:
             return state;

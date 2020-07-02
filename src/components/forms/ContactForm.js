@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Field, ErrorMessage} from 'formik';
+import {Formik} from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 
@@ -8,7 +8,7 @@ import TextareaInput from './TextareaInput';
 
 const ContactForm = () => {
 
-    const postMsg = async (values) => {
+    const postMsg = async values => {
         const url = "https://fer-api.coderslab.pl/v1/portfolio/contact";
         const params = {
             name: values.name,
@@ -41,9 +41,8 @@ const ContactForm = () => {
                     .min(120, 'Wiadomość musi mieć, co najmniej 120 znaków.')
                     .required('Wymagane')
             })}
-            onSubmit={(values, setSubmitting, {resetForm}) => {
+            onSubmit={(values, {resetForm}) => {
                 postMsg(values);
-                setSubmitting(false);
                 resetForm(values);
             }}
         >
@@ -54,7 +53,7 @@ const ContactForm = () => {
                         label="Wpisz swoje imię"
                         labelClass="contact__label"
                         errorClass="contact__error"
-                        class="contact__input"
+                        className="contact__input"
                         name="name"
                         type="text"
                         placeholder="Krzysztof"
@@ -62,10 +61,10 @@ const ContactForm = () => {
                 </div>
                 <div className="input-wrapper input-wrapper__email">
                     <TextInput 
-                        label="Wpisz swj email"
+                        label="Wpisz swój email"
                         labelClass="contact__label"
                         errorClass="contact__error"
-                        class="contact__input"
+                        className="contact__input"
                         name="email"
                         type="email"
                         placeholder="abc@cos.com"
@@ -76,7 +75,7 @@ const ContactForm = () => {
                         label="Wpisz swoją wiadomość"
                         labelClass="contact__label"
                         name="msg"
-                        class="contact__message contact__input"
+                        className="contact__message contact__input"
                         errorClass="contact__error  msg__error"
                         cols="30"
                         row="10"

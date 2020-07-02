@@ -23,6 +23,7 @@
     background-color: $color-bg;
     padding: 3rem 4rem;
     position: relative;
+    position: relative;
     [class^='form__label'] {
         font-size: 1.3rem;
         font-weight: 600;
@@ -35,13 +36,11 @@
     }
     .form__input {
         border-bottom: 1px solid $color-font-alt;
+        margin-bottom: 1rem;
         width: 100%;
         padding: 0.3rem;
         font-size: 1.4rem;
         color: inherit;
-    }
-    .form__input_last {
-        margin-bottom: 1rem;
     }
 }
 
@@ -95,6 +94,13 @@
 }
 
 .form__error {
+    position: absolute;
+    bottom: 1rem;
     color: red;
-    width: max-content;
+    font-weight: 600;
+    padding: 0.2rem;
+}
+
+.form__error-signup {
+    bottom: -1rem;
 }
