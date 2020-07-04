@@ -1,3 +1,51 @@
+.giveaway-form {
+    background: url('../../../assets/teddy.png') no-repeat;
+    background-size: contain;
+    background-position: right;
+    padding: 2rem 10rem;
+    .step-num {
+        font-size: 1.4rem;
+        color: $color-font-main;
+        padding-bottom: 3rem;
+    }
+}
+
 .step__title {
     font-size: 2.8rem;
+    font-weight: 600;
+    padding-bottom: 2rem;
+}
+
+
+.step-1__label {
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 1rem 1rem 1rem 3rem;
+}
+
+.radio-wrapper {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include flexbox(row,flex-start,center);
+    .step-1__input {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .checkmark {
+            background-color: $color-border-yellow;
+        }
+    }
+    .checkmark {
+        position: absolute;
+        border: 1px solid $color-font-main;
+        width: 2rem;
+        height: 2rem;
+        left: 0;
+        z-index: -1;
+    }
 }

@@ -11,6 +11,7 @@ class GiveAwayForm extends Component {
         step: 1,
     }
     render() {
+        const {step} = this.state;
         return (
             <Formik
             initialValues={{items: '', email: '', msg: ''}}
@@ -31,7 +32,9 @@ class GiveAwayForm extends Component {
             }}
         >{formik => (
             <form onSubmit={formik.handleSubmit} className="giveaway-form">
-                <Step1 /> 
+                <p className="step-num">Krok {step}/4</p>
+                <Step1 />
+                <button className="giveaway__btn_next">Dalej</button>
             </form>
         )}
             </Formik>
