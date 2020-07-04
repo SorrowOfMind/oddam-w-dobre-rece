@@ -8,7 +8,7 @@ const TextareaInput = ({label, ...props}) => {
             <label htmlFor={props.id || props.name} className={props.labelClass}>{label}</label>
             <textarea className={props.class} {...field} {...props}/>
             {meta.touched && meta.error ? (
-            <div className={props.errorClass} >{meta.error}</div>
+            <div className={props.errorClass}>{meta.error}</div>
             ) : null}
         </>
     )
