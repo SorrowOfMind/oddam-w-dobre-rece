@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
@@ -8,15 +8,10 @@ import {signUp} from '../../actions/authActions';
 
 import TextInput from '../forms/TextInput';
 
-
 const SignUpForm = () => {
     const dispatch = useDispatch();
     const authErr = useSelector(state => state.auth.signupError);
     const auth = useSelector(state => state.firebase.auth);
-
-    // const emailInput = useRef(null);
-    // const pswdInput = useRef(null);
-    // const pswd2Input = useRef(null);
 
     if (auth.uid) return <Redirect to='/' />
     
@@ -37,7 +32,6 @@ const SignUpForm = () => {
                         password2: Yup.string()
                             .oneOf([Yup.ref('password'), null], 'Hasła nie mogą się różnić.')
                             .required('Wymagane')
-
                     })}
                     onSubmit={(values, {resetForm}) => {
                         dispatch(signUp(values))

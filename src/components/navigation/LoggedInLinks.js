@@ -15,7 +15,7 @@ const LoggedInLinks = () => {
     return (
         <>
             <li className="link-in">Cześć {auth.email}</li>
-            <li className="link-in link-in_yellow-border">Oddaj rzeczy</li>
+            <Link to="/oddaj-rzeczy"><li className="link-in link-in_yellow-border">Oddaj rzeczy</li></Link>
             <Link to="/logout"><li className="link-in link-logout" onClick={handleLogOut}>Wyloguj</li></Link>
         </>
     )
