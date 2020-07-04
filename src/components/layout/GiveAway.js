@@ -1,14 +1,14 @@
 import React from 'react';
 import GiveAwayHeader from './GiveAwayHeader';
-import GiveAwayNote from './GiveAwayNote';
 import GiveAwayForm from '../forms/GiveAwayForm';
+import Footer from './Footer';
 
 const GiveAway = () => {
     return (
         <div>
             <GiveAwayHeader />
-            <GiveAwayNote />
             <GiveAwayForm />
+            <Footer />
         </div>
     )
 }
