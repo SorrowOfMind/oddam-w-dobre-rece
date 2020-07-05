@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import {Formik} from 'formik';
-import axios from 'axios';
 import * as Yup from 'yup';
 
 import GiveAwayNote from '../layout/GiveAwayNote';
@@ -9,6 +8,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
+import GiveAwaySummary from './GiveAwaySummary';
 
 class GiveAwayForm extends Component {
     state = {
@@ -37,33 +37,46 @@ class GiveAwayForm extends Component {
         const {step, titles} = this.state;
         return (
             <Formik
-            initialValues={{items: "reusableClothes", bags: '', localization: '', helpGroups: ['kids'], localizationSpecific: ''}}
-            // validationSchema={Yup.object({
-            //     items: Yup.string()
-            //         .required('Proszę wybrać jedną z opcji'),
-            //     // email: Yup.string()
-            //     //     .email('Email jest niepoprawny')
-            //     //     .required('Wymagane'),
-            //     // msg: Yup.string()
-            //     //     .min(120, 'Wiadomość musi mieć, co najmniej 120 znaków.')
-            //     //     .required('Wymagane')
-            // })}
+            initialValues={{
+                items: "reusableClothes", 
+                bags: '', 
+                localization: '', 
+                helpGroups: ['kids'], 
+                localizationSpecific: '', 
+                street: '',
+                city: '',
+                postCode: '',
+                phone: '',
+                date: '',
+                time: '',
+                note: ''
+            }}
+            validationSchema={Yup.object({
+                items: Yup.string()
+                    .required('Proszę wybrać jedną z opcji'),
+                bags: Yup.string()
+                    .required('Wymagane'),
+                localization: Yup.string()
+                    .required('Wymagane')
+            })}
             onSubmit={(values, {resetForm}) => {
                 console.log(values)
                 resetForm(values);
             }}
         >{formik => (
             <>
-            <GiveAwayNote title={titles[step-1]}/>
+            {step <=4 && <GiveAwayNote title={titles[step-1]}/>}
             <form onSubmit={formik.handleSubmit} className="giveaway-form">
-                <p className="step-num">Krok {step}/4</p>
+                {step <= 4 && <p className="step-num">Krok {step}/4</p>}
                 {step === 1 && <Step1 values={formik.values} />}
                 {step === 2 && <Step2 values={formik.values} />}
                 {step === 3 && <Step3 values={formik.values} />}
                 {step === 4 && <Step4 values={formik.values} />}
+                {step === 5 && <GiveAwaySummary values={formik.values}/>}
                 <div className="giveaway__btns-wrapper">
                     {step !== 1 && <button type="button" className="giveaway__btn giveaway__btn_prev" onClick={this.decrementStep}>Wstecz</button>}
-                    <button type="button" className="giveaway__btn giveaway__btn_next" onClick={this.incrementStep}>Dalej</button>
+                    {step <= 4 && <button type="button" className="giveaway__btn giveaway__btn_next" onClick={this.incrementStep}>Dalej</button>}
+                    {step === 5 && <button type="submit" className="giveaway__btn giveaway__btn_submit" onClick={this.incrementStep}>Potwierdzam</button>}
                 </div>
             </form>
             </>
