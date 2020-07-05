@@ -2,7 +2,6 @@ import React from 'react';
 import SelectInput from './SelectInput';
 
 const Step2 = ({values}) => {
-    console.log(values);
     const options = [1,2,3,4,5];
     return (
         <div className="step-2">
