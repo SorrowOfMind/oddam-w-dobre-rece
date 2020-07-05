@@ -16,9 +16,8 @@
 .step__title {
     font-size: 2.8rem;
     font-weight: 600;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
 }
-
 
 .step-1__label {
     font-size: 1.4rem;
@@ -55,7 +54,9 @@
 }
 
 .giveaway__btns-wrapper {
-    margin: 5rem 0 3rem 0;
+    margin: 5rem 0 3rem;
+    position: absolute;
+    bottom: 0;
     .giveaway__btn {
         color: $color-font-main;
         font-size: 1.6rem;
@@ -65,7 +66,7 @@
         width: 10rem;
         cursor: pointer;
         position: relative;
-        transition: box-shadow .3s;
+        transition: box-shadow 0.3s;
         &_prev {
             margin-right: 2.5rem;
         }
@@ -76,3 +77,88 @@
     }
 }
 
+.step-2__label {
+    font-size: 1.4rem;
+    padding-right: 2rem;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.select-wrapper {
+    display: inline-block;
+    position: relative;
+
+}
+
+.select-arrow-down:after {
+    content: "";
+    background-image: url('../../../assets/arrow_down.png');
+    background-position: center;
+    background-size: 3.5rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.select-arrow-up:after {
+    content: "";
+    background-image: url('../../../assets/arrow_up.png');
+    background-position: center;
+    background-size: 3.5rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.pseudo-select {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-font-main;
+    font-size: 1.4rem;
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+    font-weight: 300;
+    background-color: $color-steps-bg;
+    color: $color-font-main;
+    padding-left: 0.7rem;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+}
+
+.step-2__input {
+    position: relative;
+    z-index: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background-image: none;
+    border: 1px solid $color-font-main;
+    font-size: 1.4rem;
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+    font-weight: 300;
+    background-color: $color-steps-bg;
+    padding-right: 7rem;
+    cursor: pointer;
+    width: 15rem;
+    opacity: 0;
+    option {
+        border: 1px solid $color-font-main;
+        color:  $color-font-main;
+    }
+}
+
+select::-ms-expand {
+    display: none;
+}

@@ -7,13 +7,15 @@ import * as Yup from 'yup';
 import GiveAwayNote from '../layout/GiveAwayNote';
 import Step1 from './Step1';
 import Step2 from './Step2';
+import Step3 from './Step3';
 
 class GiveAwayForm extends Component {
     state = {
         step: 1,
         titles: [
             "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.",
-            "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ."
+            "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.",
+            "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy."
         ],
     }
 

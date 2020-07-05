@@ -7,12 +7,12 @@ const Step2 = ({values}) => {
     return (
         <div className="step-2">
            <h1 className="step__title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
+           <h3 className="step-2__label">Liczba 60l worków: </h3>
            <SelectInput
-                label="Liczba 60l worków:"
                 className="step-2__input"
-                labelClass="step-2__label"
                 name="bags"
                 options={options}
+                values={values}
            />
         </div>
     )
