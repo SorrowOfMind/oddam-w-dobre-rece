@@ -12,6 +12,7 @@ const Step2 = ({values}) => {
                 name="bags"
                 options={options}
                 values={values}
+                errorClass="step-error"
            />
         </div>
     )

@@ -11,6 +11,9 @@ const SelectInput = ({options, values, ...props}) => {
             <Field as="select" {...field} {...props} onClick={handleMenu}>
                 {options.map(option => <option key={option}>{option}</option>)}
             </Field>
+            {meta.touched && meta.error ? (
+            <div className={props.errorClass}>{meta.error}</div>
+            ) : null}
         </div>
     )
 }
