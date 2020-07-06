@@ -1,15 +1,19 @@
-import React from 'react';
-import {useField} from 'formik';
+import React, {useState} from 'react';
+import {Field, useField} from 'formik';
 
-const SelectInput = ({label, options, ...props}) => {
+const SelectInput = ({options, values, ...props}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const handleMenu = () => setIsOpen(prevOpen => !prevOpen);
     const [field, meta] = useField(props);
     return (
-        <div className="select-wrapper">
-            <label htmlFor={props.name} className={props.labelClass}>{label}</label>
-            <select className={props.className} {...field} {...props}>
-                <option>--wybierz--</option>
-                {options.map(option => <option>{option}</option>)}
-            </select>
+        <div className={isOpen ? "select-wrapper select-arrow-up" : "select-wrapper select-arrow-down"}>
+            <div className="pseudo-select">{values[props.name] ? values[props.name] : '\u2014 wybierz \u2014'}</div>
+            <Field as="select" {...field} {...props} onClick={handleMenu}>
+                {options.map(option => <option key={option}>{option}</option>)}
+            </Field>
+            {meta.touched && meta.error ? (
+            <div className={props.errorClass}>{meta.error}</div>
+            ) : null}
         </div>
     )
 }

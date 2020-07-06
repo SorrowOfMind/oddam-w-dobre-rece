@@ -13,40 +13,40 @@ const Step1 = ({values}) => {
                 labelClass="step-1__label"
                 className="step-1__input"
                 name="items"
-                value="reusableClothes"
-                defaultChecked={values.items === "reusableClothes"}
+                value="ubrania, które nadają się do ponownego użycia"
+                defaultChecked={values.items === "ubrania, które nadają się do ponownego użycia"}
             />
             <RadioInput 
                 label="ubrania do wyrzucenia"
                 labelClass="step-1__label"
                 className="step-1__input"
                 name="items"
-                value="nonusableClothes"
-                defaultChecked={values.items === "nonusableClothes"}
+                value="ubrania do wyrzucenia"
+                defaultChecked={values.items === "ubrania do wyrzucenia"}
             />
             <RadioInput
                 label="zabawki"
                 labelClass="step-1__label"
                 className="step-1__input"
                 name="items"
-                value="toys"
-                defaultChecked={values.items === "toys"}
+                value="zabawki"
+                defaultChecked={values.items === "zabawki"}
             />
             <RadioInput 
                 label="książki"
                 labelClass="step-1__label"
                 className="step-1__input"
                 name="items"
-                value="books"
-                defaultChecked={values.items === "books"}
+                value="książki"
+                defaultChecked={values.items === "książki"}
             />
             <RadioInput 
                 label="inne"
                 labelClass="step-1__label"
                 className="step-1__input"
                 name="items"
-                value="others"
-                defaultChecked={values.items === "others"}
+                value="inne"
+                defaultChecked={values.items === "inne"}
             />
             </Field>
         </div>
