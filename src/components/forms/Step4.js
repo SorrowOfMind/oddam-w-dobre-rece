@@ -60,8 +60,6 @@ const Step4 = ({values}) => {
                             labelClass="step-4__label"
                             name="time"
                             type="time"
-                            min="09:00"
-                            max="18:00"
                             className="step-4__txt-input"/>
                     </div>
                     <div className="step-4-input-wrapper">

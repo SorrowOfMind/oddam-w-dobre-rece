@@ -109,16 +109,12 @@
     }
     .giveaway__btn_submit {
         width: 15rem;
-        
     }
 }
-
-
 
 .select-wrapper {
     display: inline-block;
     position: relative;
-
 }
 
 .select-arrow-down:after {
@@ -258,7 +254,6 @@ select::-ms-expand {
     margin-right: 5%;
 }
 
-
 .step-4__txt-input {
     border: 1px solid $color-font-main;
     font-size: 1.2rem;
@@ -267,7 +262,44 @@ select::-ms-expand {
     min-width: 15rem;
     resize: none;
 }
+
 .step-4__txtarea-input {
     height: 7.7rem;
     width: 10rem;
+}
+
+.giveaway-summary__items {
+    font-size: 1.5rem;
+    padding: 0 0 1rem 0; 
+    @include flexbox(row, flex-start,center);
+    .giveaway-summary__icon {
+        width: 3rem;
+    }
+    .giveaway-summary__content {
+        padding-left: 2rem;
+    }
+}
+
+.giveaway-summary__delivery {
+    @include flexbox(row, space-between,stretch);
+    font-weight: 300;
+    width: 50%;
+}
+
+.giveaway-summary__address, .giveaway-summary__date {
+    width: 40%;
+    min-width: 200px;
+}
+
+.address__details, .delivery__details {
+    font-size: 1.4rem;
+    width: 100%;
+    .details-wrapper {
+        @include flexbox(row, space-between, center);
+        padding: .5rem 0;
+        .details__title {
+            display: inline-block;
+            width: 25%;
+        }
+    }
 }

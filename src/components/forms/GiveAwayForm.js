@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {Formik} from 'formik';
+import {Formik, Field} from 'formik';
 import * as Yup from 'yup';
 
 import GiveAwayNote from '../layout/GiveAwayNote';
@@ -38,10 +38,10 @@ class GiveAwayForm extends Component {
         return (
             <Formik
             initialValues={{
-                items: "reusableClothes", 
+                items: "ubrania, które nadają się do ponownego użycia", 
                 bags: '', 
                 localization: '', 
-                helpGroups: ['kids'], 
+                helpGroups: ['dzieciom'], 
                 localizationSpecific: '', 
                 street: '',
                 city: '',
