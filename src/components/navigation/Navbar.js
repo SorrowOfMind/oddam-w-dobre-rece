@@ -12,7 +12,7 @@ const Navbar = () => {
     const auth = useSelector(state => state.firebase.auth)
     const links = auth.uid ? <LoggedInLinks /> : <LoggedOutLinks />;
     return (
-        <nav className="navbar container">
+        <nav className={isMobile ? "navbar-mobile" : "navbar container"}>
             {isMobile ? 
             <HamburgerMenu /> :
             (<>

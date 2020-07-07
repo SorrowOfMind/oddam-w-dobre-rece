@@ -1,36 +1,41 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+import {motion, useCycle} from 'framer-motion';
 
-const hamburgerVariants = {
-    hidden: {
-        opacity: 0,
-        x: '100vw'
-      },
-      visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-          type:"spring", 
-          delay:0.2
-        }
-      },
-      exit: {
-        x: '-100vw',
-        transition: {ease: 'easeInOut'}
-      }
-}
+import HamburgerToggle from './HamburgerToggle';
+
+const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 320px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 10,
+      // restDelta: 3
+    }
+  }),
+  closed: {
+    clipPath: "circle(29px at 320px 40px)",
+    transition: {
+      delay: 0.4,
+      type: "spring",
+      stiffness: 400,
+      damping: 40
+    }
+  }
+};
 
 const HamburgerMenu = () => {
+    const [isOpen, toggleOpen] = useCycle(false, true);
     return (
-        <motion.div 
-            className="hamburger"
-            variants={hamburgerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit">
-            <div className="hamburger-line-1"></div>
-            <div className="hamburger-line-2"></div>
-            <div className="hamburger-line-3"></div>
+        <motion.div
+            initial={false}
+            // className="hamburger"
+            // variants={hamburgerVariants}
+            // initial="hidden"
+            // animate="visible"
+            animate={isOpen ? "open" : "closed"}
+            >
+             <motion.div className="background" variants={sidebar}/>
+             <HamburgerToggle toggle={() => toggleOpen()} /> 
         </motion.div>
     )
 }

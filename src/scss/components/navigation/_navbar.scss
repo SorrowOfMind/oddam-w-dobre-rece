@@ -48,18 +48,18 @@
         padding: 0.5rem 0;
         &:not(:first-child):before {
             content: '';
-            width: 1%;
+            width: 0;
             height: 0;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             bottom: 0;
             border-bottom: 2px solid transparent;
-            transition: transform .2s;
+            transition: width .2s;
             transform-origin: center;
         }
         &:hover:not(:first-child):before {
-            transform: scaleX(100);
+            width: 100%;
             border-bottom: 2px solid $color-border-yellow;
         }
     }

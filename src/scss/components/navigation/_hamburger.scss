@@ -1,24 +1,40 @@
-.navbar {
-    position: fixed;
-    background-color: $color-font-alt;
-    height: 5rem;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+.navbar-mobile {
+    width: 100%;
+    // padding: 2.5rem 1rem 0 0;
+    position: relative;
+    z-index: 100;
 }
 
 .hamburger {
     position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 6rem;
+    height: 6rem;
+    // padding: 1rem;
+    // margin-right: 1rem;
+    cursor: pointer;
+    background-color: $color-font-main;
+    border-radius: 50%;
+    @include flexbox(row, center, center);
+    // [class^='hamburger-line-'] {
+    //     height: 4px;
+    //     width: 3rem;
+    //     margin: .4rem 0;
+    //     background-color: #fff;
+    //     border-radius: 2px;
+    // }
+}
+
+
+.background {
+    position: absolute;
+    z-index: -1;
     top: 0;
     right: 0;
-    width: 5rem;
-    height: 5rem;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    cursor: pointer;
-    // border: 1px solid red;
-    @include flexbox(column, space-around, stretch);
-    [class^='hamburger-line-'] {
-        height: 4px;
-        background-color: #fff;
-        border-radius: 2px;
-    }
-}
+    bottom: 0;
+    width: 360px;
+    height: 100vh;
+    background-color: $color-font-main;
+
+  }

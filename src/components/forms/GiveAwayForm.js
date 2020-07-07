@@ -64,7 +64,7 @@ class GiveAwayForm extends Component {
         time: Yup.string().required('Wymagane')
     });
 
-    schemaArray = [this.Step1Schema, this.Step2Schema, this.Step3Schema, this.Step4Schema]
+    schemaArray = [this.Step1Schema, this.Step2Schema, this.Step3Schema, this.Step4Schema];
 
     render() {
         const {step, titles} = this.state;
