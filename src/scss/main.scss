@@ -7,13 +7,6 @@
 @import './utils/general.scss';
 @import './utils/mixins.scss';
 
-
-
-
-@media screen and (max-width: 768px) {
-    @import './components/navigation/navbar-sm.scss';
-}
-
 @import './components/navigation/navbar.scss';
 @import './components/forms/forms.scss';
 @import './components/sections/header.scss';
@@ -26,13 +19,17 @@
 @import './components/forms/giveaway.scss';
 
 @media screen and (max-width: 1024px) {
-    @import './components/navigation/navbar-md.scss';
-    @import './components/sections/footer-md';
+    @import './components/sections/footer-md.scss';
 
 }
 
 @media screen and (max-width: 900px) {
     @import './components/sections/steps-md.scss';
-    @import './components/sections/header-md';
+    @import './components/sections/header-md.scss';
 }
 
+
+@media screen and (max-width: 768px) {
+    @import './components/sections/header-sm.scss';
+    @import './components/navigation/hamburger.scss';
+}

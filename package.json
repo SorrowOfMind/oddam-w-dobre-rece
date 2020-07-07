@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "firebase": "^7.15.5",
     "formik": "^2.1.4",
+    "framer-motion": "^1.11.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

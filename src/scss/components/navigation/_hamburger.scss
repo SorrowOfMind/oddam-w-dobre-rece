@@ -1,0 +1,24 @@
+.navbar {
+    position: fixed;
+    background-color: $color-font-alt;
+    height: 5rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    // border: 1px solid red;
+    @include flexbox(column, space-around, stretch);
+    [class^='hamburger-line-'] {
+        height: 4px;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+}
