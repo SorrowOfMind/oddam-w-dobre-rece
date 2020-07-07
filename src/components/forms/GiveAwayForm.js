@@ -46,7 +46,9 @@ class GiveAwayForm extends Component {
     Step3Schema = Yup.object().shape({
         localizationSpecific: Yup.string(),
         helpGroups: Yup.array().min(1, 'Wymagana co najmniej 1 grupa').required('Wymagane'),
-        localization: Yup.string().when('localizationSpecific', function(val) {if (val == null) return this.required('Wymagane miasto lub organizacja')})
+        localization: Yup.string().when('localizationSpecific', function(val) {
+            if (val == null) return this.required('Wymagane miasto lub organizacja')
+        })
     });
 
     Step4Schema = Yup.object().shape({

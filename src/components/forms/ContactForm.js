@@ -79,7 +79,7 @@ const ContactForm = () => {
                         errorClass="contact__error  msg__error"
                         cols="30"
                         row="10"
-                        placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla eligendi aliquid doloremque, dignissimos id sequi! Deserunt delectus doloremque quae veniam animi mollitia."
+                        placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla eligendi aliquid doloremque, dignissimos id sequi! Deserunt delectus doloremque quae veniam animi. Deserunt delectus doloremque quae veniam animi."
                     />
                 </div>
                 <button type="submit" className="form__submit-btn">
