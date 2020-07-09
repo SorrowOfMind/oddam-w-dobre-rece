@@ -16,8 +16,8 @@ const linksListVariants = {
             delay: 0,
             mass: 0.2,
             damping: 8,
-            staggerChildren: 0.4,
-            delayChildren: 0.1
+            staggerChildren: 0.3,
+            delayChildren: 0.4
         }
     },
     closed: {

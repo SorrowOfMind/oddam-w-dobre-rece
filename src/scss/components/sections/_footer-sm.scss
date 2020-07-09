@@ -1,13 +1,13 @@
 .footer {
     background: linear-gradient(rgba(255,255,255, 0.83), rgba(255,255,255, 0.89)), url('../../../assets/bg-img.png');
     background-repeat: no-repeat, no-repeat;
-    height: 55vh;
+    height: 50vh;
     background-size: cover, 100% 100%;
 }
 
 .footer__content {
     width: 100%;
-    padding: 5rem 4% 3rem 0;
+    padding: 1rem 4% 3rem 0;
 }
 
 .contact-form {
@@ -21,6 +21,5 @@
     .textarea-wrapper {
         margin-top: 0;
         padding-bottom: 2rem;
-
     }
 }

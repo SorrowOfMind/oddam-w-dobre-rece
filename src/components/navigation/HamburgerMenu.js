@@ -6,16 +6,14 @@ import HamburgerItems from './HamburgerItems';
 
 const sidebarVariants = {
   open: (height = 500) => ({
-    clipPath: `circle(${height * 2 + 200}px at 320px 40px)`,
-    // clipPath: `circle(${height * 2 + 200}px at 94.5% 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at right 40px top 40px)`,
     transition: {
       type: "spring",
       stiffness: 10,
     }
   }),
   closed: {
-    clipPath: "circle(29px at 320px 40px)",
-    // clipPath: "circle(29px at 94.5% 40px)",
+    clipPath: "circle(29px at right 40px top 40px)",
     transition: {
       delay: 0.3,
       type: "spring",

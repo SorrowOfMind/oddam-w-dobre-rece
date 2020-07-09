@@ -5,8 +5,8 @@ import {motion} from 'framer-motion';
 const MobileLoggedOutLinks = ({linksVariants, toggleOpen}) => {
     return (
         <>
-            <Link to="/login"><motion.li variants={linksVariants} onClick={toggleOpen} className="mobile-link-out hamburger-commom-link">Zaloguj</motion.li></Link>
-            <Link to='/signup'><motion.li className="mobile-link-out hamburger-commom-link" onClick={toggleOpen} variants={linksVariants}><span className="link__content">Załóż konto</span></motion.li></Link>
+            <Link to="/login"><motion.li variants={linksVariants} onClick={toggleOpen} className="mobile-link-out hamburger-commom-link">ZALOGUJ</motion.li></Link>
+            <Link to='/signup'><motion.li className="mobile-link-out hamburger-commom-link" onClick={toggleOpen} variants={linksVariants}><span className="link__content">ZAŁÓŻ KONTO</span></motion.li></Link>
         </>
     )
 }
