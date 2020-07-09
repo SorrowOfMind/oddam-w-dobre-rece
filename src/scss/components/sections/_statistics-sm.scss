@@ -1,0 +1,15 @@
+.statistic__col {
+    padding: 2rem 2%;
+    text-align: center;
+    .statistic__num {
+        @include fluid-font(40px,70px);
+    }
+    .statistic__dscr {
+        @include fluid-font(12px,16px);
+    }
+    .statistic__text {
+        @include fluid-font(10px,13px);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}

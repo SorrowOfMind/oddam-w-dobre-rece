@@ -9,14 +9,12 @@ const GiveAwayHeader = () => {
                         <h1 className="header__title giveaway__title">Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM</h1>
                         <h2 className="header__subtitle giveaway__subtitle">Wystarczą 4 proste kroki:</h2>
                     </div>
-                    <div className="header__btns">
                         <ul className="steps-list">
                             <li className="step-item-1">Wybierz rzeczy</li>
                             <li className="step-item-2">Spakuj je w worki</li>
                             <li className="step-item-3">Wybierz fundację</li>
                             <li className="step-item-4">Zamów kuriera</li>
                         </ul>
-                    </div>
                 </div>
             </div>
         </header>

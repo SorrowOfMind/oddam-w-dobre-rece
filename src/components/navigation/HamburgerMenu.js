@@ -2,20 +2,22 @@ import React from 'react';
 import {motion, useCycle} from 'framer-motion';
 
 import HamburgerToggle from './HamburgerToggle';
+import HamburgerItems from './HamburgerItems';
 
-const sidebar = {
-  open: (height = 1000) => ({
+const sidebarVariants = {
+  open: (height = 500) => ({
     clipPath: `circle(${height * 2 + 200}px at 320px 40px)`,
+    // clipPath: `circle(${height * 2 + 200}px at 94.5% 40px)`,
     transition: {
       type: "spring",
       stiffness: 10,
-      // restDelta: 3
     }
   }),
   closed: {
     clipPath: "circle(29px at 320px 40px)",
+    // clipPath: "circle(29px at 94.5% 40px)",
     transition: {
-      delay: 0.4,
+      delay: 0.3,
       type: "spring",
       stiffness: 400,
       damping: 40
@@ -25,17 +27,16 @@ const sidebar = {
 
 const HamburgerMenu = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
+   
     return (
         <motion.div
             initial={false}
-            // className="hamburger"
-            // variants={hamburgerVariants}
-            // initial="hidden"
-            // animate="visible"
             animate={isOpen ? "open" : "closed"}
+            className="hamburger-wrapper"
             >
-             <motion.div className="background" variants={sidebar}/>
-             <HamburgerToggle toggle={() => toggleOpen()} /> 
+             <motion.div className="background" variants={sidebarVariants} />
+             <HamburgerToggle toggle={() => toggleOpen()} />
+             <HamburgerItems isOpen={isOpen} toggleOpen={toggleOpen}/>
         </motion.div>
     )
 }

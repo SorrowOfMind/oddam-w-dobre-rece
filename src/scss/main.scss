@@ -20,16 +20,31 @@
 
 @media screen and (max-width: 1024px) {
     @import './components/sections/footer-md.scss';
-
+    @import './components/forms/giveaway-md.scss';
 }
 
 @media screen and (max-width: 900px) {
     @import './components/sections/steps-md.scss';
-    @import './components/sections/header-md.scss';
 }
 
 
 @media screen and (max-width: 768px) {
     @import './components/sections/header-sm.scss';
     @import './components/navigation/hamburger.scss';
+    @import './components/sections/footer-sm.scss';
+    @import './components/sections/organizations-sm.scss';
+    @import './components/sections/about-sm.scss';
+    @import './components/sections/steps-sm.scss';
+    @import './components/sections/statistics-sm.scss';
+    @import './components/forms/forms-sm.scss';
+    @import './components/forms/giveaway-sm.scss';
+}
+
+@media screen and (max-width: 632px) {
+    @import './components/forms/giveaway-xsm.scss';
+}
+
+@media screen and (max-width: 420px) {
+    @import './components/sections/header-xsm.scss';
+    @import './components/sections/footer-xsm.scss';
 }

@@ -1,0 +1,89 @@
+.giveaway-header {
+    background-size: 50% 100%;
+    background-position: left top;
+}
+
+.giveaway-header__content {
+    padding: 5% 0 2% 0;
+    top: 60%;
+    width: 58%;
+}
+
+.steps-list {
+    padding: 5rem 0;
+    @include flexbox(row,center,center)
+}
+
+@for $i from 1 through 4 {
+    .step-item-#{$i} {
+        font-size: 1.2rem;
+        padding: 1rem;
+        width: 8.7rem;
+        margin-right: 0rem;
+        margin-bottom: 3rem;
+        &:before {
+            top: -40%;
+            left: 50%;
+        }
+        &:after {
+            top: -12%;
+            left: 14%;
+            width: 6.2rem;
+            height: 6.2rem;
+        }
+    }
+}
+
+.giveaway-note {
+    padding: 2rem 5rem;
+    .giveaway-note__title {
+        @include fluid-font(20px,24px);
+    }
+    .giveaway-note__text {
+        @include fluid-font(12px,15px);
+        max-width: 80%;
+    }
+}
+
+.giveaway-form {
+    padding: 3rem 0 5rem 3rem;
+}
+
+.step-4__title {
+    padding-bottom: 0;
+}
+
+.step-4-input-wrapper {
+    margin-bottom: 1rem;
+}
+
+.step-3__txt-input {
+    width: 80%;
+}
+
+.step-4-wrapper {
+    @include flexbox(column,flex-start,center);
+    padding-bottom: 4rem;
+}
+
+.step-4__address {
+    margin-right: 0;
+}
+
+.step-error {
+    position: absolute;
+    bottom : -1rem;
+    color: red;
+    font-size: 1.2rem;
+    width: 200%;
+}
+
+.giveaway-summary__items {
+    @include fluid-font(13px,15px);
+}
+
+.giveaway-summary__delivery {
+    @include flexbox(column, space-between,center);
+    width: 90%;
+    padding-bottom: 5rem;
+}

@@ -15,7 +15,6 @@
     background-size: calc(50% - 10vw);
     .about__text {
         text-align: center;
-        font-size: 2.4rem;
         @include fluid-font(12px, 24px);
         padding: 0 calc(20% - 3vw);
     }
