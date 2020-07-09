@@ -8,6 +8,7 @@ import SignUpForm from './components/auth/SignUpForm';
 import LogInForm from './components/auth/LogInForm';
 import LogOutPage from './components/layout/LogOutPage';
 import GiveAway from './components/layout/GiveAway';
+import Panel from './components/panel/Panel';
 
 const Routes = () => {
     return (
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route path='/login' component={LogInForm} />
             <Route path="/logout" component={LogOutPage} />
             <ProtectedRoute path="/oddaj-rzeczy" component={GiveAway}/>
+            <ProtectedRoute path="/panel" component={Panel}/>
         </Switch>
     )
 }
