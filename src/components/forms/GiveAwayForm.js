@@ -58,7 +58,7 @@ class GiveAwayForm extends Component {
                 .matches(/^[0-9]{2}-[0-9]{3}$/, 'Kod pocztowy w formacie xx-xxx')
                 .required('Wymagane'),
         phone: Yup.string()
-                .matches(/[0-1]{9}/, '9 cyfr')
+                .matches(/[0-9]{9}/, '9 cyfr')
                 .required('Wymagane'),
         date: Yup.string().required('Wymagane'),
         time: Yup.string().required('Wymagane')

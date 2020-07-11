@@ -1,13 +1,15 @@
-import {SIGNUP, SIGNUP_ERROR, LOGIN, LOGIN_ERROR, LOGOUT} from './types';
+import {SIGN_UP, SIGN_UP_ERROR, LOGIN, LOGIN_ERROR, LOGOUT} from './types';
 import firebase from '../firebase/config';
 
 export const signUp = ({email, password}) => dispatch => {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(response => firebase.firestore().collection('users').doc(response.user.uid).set({
-                email: email
-            }))
-            .then(() => dispatch({type: SIGNUP}))
-            .catch(err => dispatch({type: SIGNUP_ERROR, payload: err.message}))
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(response => firebase.firestore().collection('users').doc(response.user.uid).set({
+            username: '',
+            email: email,
+            createdAt: new Date()
+        }))
+        .then(() => dispatch({type: SIGN_UP}))
+        .catch((err) => dispatch({type: SIGN_UP_ERROR, payload: err}));
 }
 
 

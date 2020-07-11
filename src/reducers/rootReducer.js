@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
     auth: authReducer,
     firebase: firebaseReducer,
     firestore: firestoreReducer,
-    giveaway: giveawayReducer
+    giveaway: giveawayReducer,
 });
 
 export default rootReducer;

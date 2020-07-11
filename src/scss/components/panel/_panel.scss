@@ -1,0 +1,240 @@
+.panel-wrapper {
+    @include flexbox(row, space-between, stretch);
+    height: 100vh;
+    position: relative;
+    z-index: 100;
+    top: 13rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.2);
+    font-size: 1.6rem;
+}
+
+.side-panel {
+    background-color: $color-bg;
+    width: 20%;
+    min-width: 360px;
+    padding: 1rem;
+}
+
+.main-panel {
+    width: 80%;
+}
+
+.user-section {
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    position: relative;
+    min-height: 6rem;
+    @include flexbox(column, space-between, flex-start);
+}
+
+.panel-title {
+    font-size: 2.6rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.panel-subtitle {
+    font-size: 1.4rem;
+}
+
+.btn__user-edit {
+    background-color: $color-border-yellow;
+    padding: .5rem 1rem;
+    font-size: 1.4rem;
+    position: absolute;
+    right: 1rem;
+    transition: background .2s;
+    &:hover {
+        background-color: $color-yellow-darker;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 111;
+}
+
+.modal {
+    background-color: #fff;
+    width: 34rem;
+    position: relative;
+    padding: 1.5rem;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    .modal-close {
+        display: block;
+        float: right;
+        cursor: pointer;
+        line-height: 0.7;
+        width: max-content;
+        &:hover {
+            transform: scale(1.3);
+            font-weight: 500;
+        }
+    }
+    .modal-title {
+        clear: right;
+        padding-bottom: 1rem;
+        font-size: 1.4rem;
+
+    }
+    .modal__input {
+        display: block;
+        border: 1px solid $color-font-main;
+        width: 100%;
+        padding: .5rem 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+
+    }
+    .modal__btn {
+        width: 100%;
+        padding: .5rem 1rem;
+        background-color: $color-border-yellow;
+        border: 2px solid $color-border-yellow;
+        color: $color-font-main;
+        transition: all .2s;
+        &:hover, &:focus {
+            background-color: $color-yellow-darker;
+            border: 2px solid $color-yellow-darker;
+        }
+    }
+}
+
+.loader-container {
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .loader_circle {
+        border: 1.5rem solid transparent;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #ffffff;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.user-aid-list {
+    text-align: center;
+    @include fluid-font(16px,22px);
+    padding: 3rem 12%;
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: $color-bg;
+    @include flexbox(column,center,stretch);
+    .user-aid-item {
+        margin-bottom: 2rem;
+        @include flexbox(row,flex-start,center);
+    }
+}
+
+.user-aid__num {
+    display: inline-block;
+    background-color: $color-border-yellow;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    font-size: 3.8rem;
+    span {
+        width: 100%;
+        height: 100%;
+        @include flexbox(row,center,center);
+    }
+}
+
+.user-aid__dscr {
+    padding: 1rem 2rem;
+}
+
+.btn__admin {
+    background-color: $color-border-yellow;
+    width: 100%;
+    padding: 1rem 2rem;
+    transition: background .2s;
+    margin-bottom: 1rem;
+    &:hover {
+        background-color: $color-yellow-darker;
+    }
+}
+
+.admin-org__create {
+    background-color: #74E55B;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background .2s;
+    &:hover {
+        background-color: #4CC432;
+    }
+}
+
+.admin-org-list {
+    border: 1px solid $color-font-alt;
+    overflow: auto;
+    max-height: 100%;
+    font-size: 1.4rem;
+    .org-item {
+        background-color: $color-bg;
+        margin-bottom: 1rem;
+        padding: 0.8rem;
+    }
+    .org-item__idx {
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+}
+
+.org-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 2rem auto;
+    height: 70%;
+    overflow: hidden;
+    padding: 6rem 0 0 0;
+}
+
+.org-item__btn {
+    background-color: $color-border-yellow;
+    padding: 0.5rem 1rem;
+    float: right;
+    &:hover {
+        background-color: $color-yellow-darker;
+    }
+}
+
+.org-item__btn_delete {
+    background-color: #C4392C;
+    color: #fff;
+    margin-right: 1rem;
+    transition: background .2s;
+    &:hover {
+        background-color: #9F2F25;
+    }
+}
