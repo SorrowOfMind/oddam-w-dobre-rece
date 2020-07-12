@@ -1,0 +1,13 @@
+[debug] [2020-07-12T13:24:21.047Z] ----------------------------------------------------------------------
+[debug] [2020-07-12T13:24:21.049Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Basia\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2020-07-12T13:24:21.049Z] CLI Version:   8.4.1
+[debug] [2020-07-12T13:24:21.049Z] Platform:      win32
+[debug] [2020-07-12T13:24:21.049Z] Node Version:  v12.16.0
+[debug] [2020-07-12T13:24:21.050Z] Time:          Sun Jul 12 2020 15:24:21 GMT+0200 (Central European Summer Time)
+[debug] [2020-07-12T13:24:21.050Z] ----------------------------------------------------------------------
+[debug] [2020-07-12T13:24:21.051Z] 
+[debug] [2020-07-12T13:24:21.058Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-07-12T13:24:21.058Z] > authorizing via signed-in user
+[debug] [2020-07-12T13:24:21.059Z] [iam] checking project portfolio-lab-45854 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2020-07-12T13:24:21.061Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-lab-45854:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}

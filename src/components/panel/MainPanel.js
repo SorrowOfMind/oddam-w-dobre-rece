@@ -1,17 +1,17 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {useFirestoreConnect} from 'react-redux-firebase';
-import Loader from '../layout/Loader';
 import CommonPanel from './CommonPanel';
 import OrgPanel from './OrgPanel';
+import UsersPanel from './UsersPanel';
 
-const MainPanel = ({uid, admin, currentList}) => {
+const MainPanel = ({uid, currentList, setDeletionModal}) => {
+    
     return (
         <>
             
             <div className="main-panel">
                 {currentList === 'common' && <CommonPanel uid={uid}/>}
-                {currentList !== 'common' && <OrgPanel currentList={currentList}/>}
+                {(currentList !== 'common' && currentList !== 'users') && <OrgPanel currentList={currentList} setDeletionModal={setDeletionModal}/>}
+                {currentList === 'users' && <UsersPanel />}
             </div>
             
         </>

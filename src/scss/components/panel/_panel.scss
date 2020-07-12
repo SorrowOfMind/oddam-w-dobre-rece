@@ -81,6 +81,9 @@
             font-weight: 500;
         }
     }
+    .modal-input-wrapper {
+        position: relative;
+    }
     .modal-title {
         clear: right;
         padding-bottom: 1rem;
@@ -107,6 +110,17 @@
             background-color: $color-yellow-darker;
             border: 2px solid $color-yellow-darker;
         }
+    }
+    .modal-label {
+        font-size: 1.4rem;
+    }
+
+    .modal__error {
+        font-size: 1.2rem;
+        color: red;
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
     }
 }
 

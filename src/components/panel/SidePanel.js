@@ -1,7 +1,13 @@
 import React from 'react';
+import firebase from '../../firebase/config';
 
-const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList, foundations, ngos,locals}) => {
-    
+const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList}) => {
+
+    const callListAllUsersFn = () => {
+        const listAllUsers = firebase.functions().httpsCallable('listAllUsers');
+        listAllUsers();
+    }
+
     return (
         <div className="side-panel">
             <h1 className="panel-title">Twoje Konto</h1>
@@ -18,9 +24,10 @@ const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchL
                 {admin &&
                 <div className="admin-section">
                     <button className="btn__admin" onClick={() => setAdminModal(true)}>NADAJ UPRAWNIENIA</button>
-                    <button className="btn__admin" onClick={() => switchList(foundations)}>FUNDACJE</button>
-                    <button className="btn__admin" onClick={() => switchList(ngos)}>ORGANIZACJE POZARZĄDOWE</button>
-                    <button className="btn__admin" onClick={() => switchList(locals)}>ZBIÓRKI LOKALNE</button>
+                    <button className="btn__admin" onClick={() => switchList('foundations')}>FUNDACJE</button>
+                    <button className="btn__admin" onClick={() => switchList('ngos')}>ORGANIZACJE POZARZĄDOWE</button>
+                    <button className="btn__admin" onClick={() => switchList('locals')}>ZBIÓRKI LOKALNE</button>
+                    <button className="btn__admin" onClick={callListAllUsersFn}>USERS</button>
                 </div>}
             </div>
         </div>

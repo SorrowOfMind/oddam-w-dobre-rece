@@ -15,23 +15,22 @@ const Panel = () => {
     const [admin, setAdmin] = useState(false);
     const [currentList, setCurrentList] = useState('common');
 
-    const foundations = useSelector(state => state.firestore.ordered.foundations);
-    const ngos = useSelector(state => state.firestore.ordered.ngos);
-    const locals = useSelector(state => state.firestore.ordered.locals);
-    
     useFirestoreConnect([
         {
-            collection: 'foundations'
+            collection: 'foundations',
+            orderBy: ['name']
         },
         {
-            collection: 'ngos'
+            collection: 'ngos',
+            orderBy: ['name']
         },
         {
-            collection: 'locals'
+            collection: 'locals',
+            orderBy: ['name']
         }
     ]);
 
-    const switchList = list => setCurrentList(list)
+    const switchList = collection => setCurrentList(collection)
 
     useEffect(() => {
         checkIfAdmin();
@@ -53,9 +52,6 @@ const Panel = () => {
                 setAdminModal={setAdminModal} 
                 admin={admin}
                 switchList={switchList}
-                foundations={foundations}
-                ngos={ngos}
-                locals={locals}
                 />
             <MainPanel 
                 uid={auth.uid} 
