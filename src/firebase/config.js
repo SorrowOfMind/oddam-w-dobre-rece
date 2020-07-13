@@ -14,6 +14,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ignoreUndefinedProperties: true});
 firebase.firestore();
 firebase.functions();
 

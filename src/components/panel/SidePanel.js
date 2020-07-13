@@ -1,12 +1,14 @@
 import React from 'react';
-import firebase from '../../firebase/config';
 
 const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList}) => {
 
-    const callListAllUsersFn = () => {
-        const listAllUsers = firebase.functions().httpsCallable('listAllUsers');
-        listAllUsers();
-    }
+    // const callListAllUsersFn = () => {
+    //     const listAllUsers = firebase.functions().httpsCallable('listAllUsers');
+    //     listAllUsers()
+    //     .then(result => console.log(result.data))
+    //     .catch(err => console.log(err))
+    // }
+
 
     return (
         <div className="side-panel">
@@ -23,11 +25,11 @@ const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchL
                 </div>
                 {admin &&
                 <div className="admin-section">
-                    <button className="btn__admin" onClick={() => setAdminModal(true)}>NADAJ UPRAWNIENIA</button>
-                    <button className="btn__admin" onClick={() => switchList('foundations')}>FUNDACJE</button>
-                    <button className="btn__admin" onClick={() => switchList('ngos')}>ORGANIZACJE POZARZĄDOWE</button>
-                    <button className="btn__admin" onClick={() => switchList('locals')}>ZBIÓRKI LOKALNE</button>
-                    <button className="btn__admin" onClick={callListAllUsersFn}>USERS</button>
+                    <button className="btn__admin-1" onClick={() => setAdminModal(true)}>NADAJ UPRAWNIENIA</button>
+                    <button className="btn__admin-2" onClick={() => switchList('foundations')}>FUNDACJE</button>
+                    <button className="btn__admin-3" onClick={() => switchList('ngos')}>ORGANIZACJE POZARZĄDOWE</button>
+                    <button className="btn__admin-4" onClick={() => switchList('locals')}>ZBIÓRKI LOKALNE</button>
+                    <button className="btn__admin-5" onClick={() => switchList('users')}>USERS</button>
                 </div>}
             </div>
         </div>

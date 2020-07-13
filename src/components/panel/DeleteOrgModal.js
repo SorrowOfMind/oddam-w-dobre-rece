@@ -21,12 +21,11 @@ const modalVariant = {
     }
 }
 
-const DeletionModal = ({modal, setModal, id, collection}) => {
+const DeleteOrgModal = ({modal, setModal, id, collection}) => {
 
     const callDeleteOrgFn = ({id, collection}) => {
         const deleteOrg = firebase.functions().httpsCallable('deleteOrg');
         deleteOrg({id, collection})
-            .then(result => console.log('ok', result.data))
             .then(() => setModal(false))
             .catch(err => console.log('err', JSON.stringify(err)))
     }
@@ -70,4 +69,4 @@ const DeletionModal = ({modal, setModal, id, collection}) => {
     )
 }
 
-export default DeletionModal;
+export default DeleteOrgModal;

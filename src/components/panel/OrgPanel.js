@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
-import DeletionModal from './DeletionModal';
-import EditModal from './EditModal';
+import DeleteOrgModal from './DeleteOrgModal';
+import EditOrgModal from './EditOrgModal';
 import CreateModal from './CreateModal';
 
 const OrgPanel = ({currentList}) => {
@@ -22,11 +22,11 @@ const OrgPanel = ({currentList}) => {
 
     return (
         <>
-        <DeletionModal modal={deletionModal} setModal={setDeletionModal} id={currentDoc} collection={currentList} />
-        <EditModal  modal={editModal} setModal={setEditModal} id={currentDoc} collection={currentList} />
+        <DeleteOrgModal modal={deletionModal} setModal={setDeletionModal} id={currentDoc} collection={currentList} />
+        <EditOrgModal  modal={editModal} setModal={setEditModal} id={currentDoc} collection={currentList} />
         <CreateModal modal={createModal} setModal={setCreateModal} collection={currentList} />
         <div className="org-wrapper">
-        <button className="admin-org__create" onClick={() => setCreateModal(true)}>Stwórz</button>
+        <button className="admin-org__create" onClick={() => setCreateModal(true)}>Nowa</button>
         <ul className="admin-org-list">
             {(foundations && currentList === 'foundations') && foundations.map((org, idx) => {
                 return (

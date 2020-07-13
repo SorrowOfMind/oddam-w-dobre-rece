@@ -25,17 +25,14 @@ const modalVariant = {
     }
 }
 
-const EditModal = ({modal, setModal, id, collection}) => {
+const EditOrgModal = ({modal, setModal, id, collection}) => {
 
     const docRef = useSelector(state => state.firestore.ordered[collection]);
     const doc = docRef.filter(doc => doc.id === id)[0];
 
-    console.log(doc);
-
     const callUpdateOrgFn = ({id, collection, values, itemsArr}) => {
         const updateOrg = firebase.functions().httpsCallable('updateOrg');
         updateOrg({id, collection, values, itemsArr})
-        .then(result => console.log('ok', result.data))
         .then(() => setModal(false))
         .catch(err => console.log('err', JSON.stringify(err)))
     }
@@ -122,4 +119,4 @@ const EditModal = ({modal, setModal, id, collection}) => {
     )
 }
 
-export default EditModal;
+export default EditOrgModal;

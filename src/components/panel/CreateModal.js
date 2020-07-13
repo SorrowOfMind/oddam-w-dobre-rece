@@ -30,7 +30,6 @@ const CreateModal = ({modal, setModal, collection}) => {
     const callAddOrgFn = ({collection, values, itemsArr}) => {
         const addOrg = firebase.functions().httpsCallable('addOrg');
         addOrg({collection, values, itemsArr})
-        .then(result => console.log('ok', result.data))
         .then(() => setModal(false))
         .catch(err => console.log('err', JSON.stringify(err)))
     }
