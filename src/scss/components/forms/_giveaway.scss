@@ -14,7 +14,7 @@
 }
 
 .step__title {
-    font-size: 2.6rem;
+    @include fluid-font(20px,26px);
     font-weight: 600;
     padding-bottom: 3.5rem;
 }
@@ -24,9 +24,9 @@
 }
 
 .step__subtitle {
-    font-size: 2rem;
+    @include fluid-font(15px,20px);
     font-weight: 600;
-    padding: 3rem 0 1rem 0;
+    padding: 3rem 0 1.5rem 0;
 }
 
 .step-4__subtitle {
@@ -230,7 +230,6 @@ select::-ms-expand {
 }
 
 .step-3__txt-input {
-    width: 100%;
     font-size: 1.4rem;
     border: 1px solid $color-font-main;
     padding: 0.5rem;
@@ -240,7 +239,6 @@ select::-ms-expand {
 
 .step-4-wrapper {
     @include flexbox(row,flex-start,stretch);
-
 }
 
 .step-4-input-wrapper {

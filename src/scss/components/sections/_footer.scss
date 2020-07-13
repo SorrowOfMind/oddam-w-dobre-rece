@@ -4,8 +4,8 @@
     height: 85vh;
     background: linear-gradient(rgba(255,255,255, 0.83), rgba(255,255,255, 0.83)), url('../../../assets/bg-img.png');
     background-repeat: no-repeat, no-repeat;
-    background-position: center, left bottom -6rem;
-    background-size: cover, 80% 110%;
+    background-position: center, left bottom;
+    background-size: cover, calc(75% + 5vw) 100%;
 }
 .footer__content {
     width: 45%;
@@ -13,7 +13,7 @@
 }
 
 .contact-form {
-    padding: 2rem 15%;
+    padding: 2rem calc(15% - 2vw);
     .form__submit-btn {
         padding: 0.8rem 2.7rem;
         font-size: 1.3rem;
@@ -25,10 +25,11 @@
         width: 46%;
     }
     .input-wrapper__name {
-        margin-right: 2.5rem;
+        margin-right: 2rem;
     }
     .textarea-wrapper {
         padding-bottom: 3rem;
+        margin-top: 2rem;
     }
 }
 
@@ -50,10 +51,6 @@
     position: relative;
 }
 
-.textarea-wrapper {
-    margin-top: 2rem;
-}
-
 .contact__message {
     display: block;
     resize: none;
@@ -73,7 +70,6 @@
 }
 
 .contact__error_name {
-    border: 1px solid red;
     color: red;
 
 }

@@ -20,14 +20,14 @@
 .step-wrapper {
     color: $color-font-main;
     text-align: center;
-    width: 13%;
-    padding: 0 4rem;
+    width: 15%;
+    padding: 0 3%;
     .step__icon {
         width: 5rem;
         margin: 0 auto;
     }
     .step__instr {
-        font-size: 1.4rem;
+        @include fluid-font(12px,14px);
         padding: 0.5rem 0;
         position: relative;
         &:after {
@@ -41,7 +41,7 @@
         }
     }
     .step__dscr {
-        font-size: 1.2rem;
+        @include fluid-font(10px,12px);
         padding: 1rem 0;
     }
 }
@@ -49,4 +49,5 @@
 .steps__btn {
     display: block;
     margin: 3rem auto 6rem auto;
+    @include fluid-font(20px,26px);
 }

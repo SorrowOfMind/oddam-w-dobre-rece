@@ -1,0 +1,12 @@
+.about {
+    background-image: none;
+}
+.about__content {
+    width: 100%;
+    padding: 2% 1rem 20% 1rem;
+    background-size: 15%;
+    .about__text {
+        @include fluid-font(12px, 24px);
+        padding: 0 calc(20% - 1vw);
+    }
+}

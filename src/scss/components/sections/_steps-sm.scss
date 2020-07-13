@@ -1,0 +1,19 @@
+.steps__btn {
+    margin: 2rem auto;
+}
+
+.steps-wrapper {
+    background-color: $color-bg;
+    @include flexbox(row, space-between, stretch);
+    padding: 4rem 1rem;
+
+}
+
+.step-wrapper {
+    width: 22%;
+    padding: 0;
+}
+
+.steps__title {
+    padding: 2rem 0 6rem 0;
+}

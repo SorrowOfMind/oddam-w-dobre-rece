@@ -1,0 +1,18 @@
+.giveaway-header__content {
+    padding: 10% 4rem 2% 4rem;
+}
+
+.giveaway-header {
+    background-position: left calc(-6rem - 8vw) top;
+}
+
+.giveaway-form {
+    background: linear-gradient($color-steps-bg, $color-steps-bg);
+}
+
+.giveaway__thanks {
+    @include fluid-font(16px,25px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

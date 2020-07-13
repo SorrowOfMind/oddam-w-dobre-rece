@@ -1,0 +1,39 @@
+.header {
+    min-height: 400px;
+    background-position: left -50% bottom;
+}
+
+.header__content {
+    top: 55%;
+    left: 65%;
+}
+
+.btn {
+    width: 17rem;
+    height: 7rem;
+}
+
+.header__btn:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 2rem ;
+}
+
+.header__btns {
+    @include flexbox(column, center,center);
+}
+
+
+.header__titles, .giveaway__title {
+    padding: 3rem 0 6rem 0;
+    &:after {
+        bottom: 10%;
+    }
+}
+
+.steps__title, .logout__title, .about__title, .organizations__title, .footer__title {
+    padding: 3rem 0 5rem 0;
+    &:after {
+        left: 50%;
+        top: 60%;
+    }
+}

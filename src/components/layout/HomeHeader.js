@@ -8,7 +8,7 @@ const HomeHeader = () => {
     const collectionPath = auth.uid ? '/' : '/login';
     return (
         <header className="header">
-            <div className="clearfix container">
+            <div className="container">
                 <div className="header__content">
                     <div className="header__titles">
                         <h1 className="header__title title">Zacznij Pomagać!</h1>

@@ -5,19 +5,19 @@
 }
 
 .statistic__col {
-    padding: 4rem 8%;
+    padding: 3rem 8%;
     text-align: center;
     color: $color-font-main;
     .statistic__num {
-        font-size: 7rem;
+        @include fluid-font(50px,70px);
         font-weight: 300;
         color: $color-font-alt2;
     }
     .statistic__dscr {
-        font-size: 1.6rem;
+        @include fluid-font(13px,16px);
     }
     .statistic__text {
-        font-size: 1.3rem;
+        @include fluid-font(10px,13px);
         padding-top: 1rem;
         padding-bottom: 2rem;
     }

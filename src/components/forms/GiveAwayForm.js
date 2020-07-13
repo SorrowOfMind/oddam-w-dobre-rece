@@ -46,7 +46,9 @@ class GiveAwayForm extends Component {
     Step3Schema = Yup.object().shape({
         localizationSpecific: Yup.string(),
         helpGroups: Yup.array().min(1, 'Wymagana co najmniej 1 grupa').required('Wymagane'),
-        localization: Yup.string().when('localizationSpecific', function(val) {if (val == null) return this.required('Wymagane miasto lub organizacja')})
+        localization: Yup.string().when('localizationSpecific', function(val) {
+            if (val == null) return this.required('Wymagane miasto lub organizacja')
+        })
     });
 
     Step4Schema = Yup.object().shape({
@@ -56,13 +58,13 @@ class GiveAwayForm extends Component {
                 .matches(/^[0-9]{2}-[0-9]{3}$/, 'Kod pocztowy w formacie xx-xxx')
                 .required('Wymagane'),
         phone: Yup.string()
-                .matches(/[0-1]{9}/, '9 cyfr')
+                .matches(/[0-9]{9}/, '9 cyfr')
                 .required('Wymagane'),
         date: Yup.string().required('Wymagane'),
         time: Yup.string().required('Wymagane')
     });
 
-    schemaArray = [this.Step1Schema, this.Step2Schema, this.Step3Schema, this.Step4Schema]
+    schemaArray = [this.Step1Schema, this.Step2Schema, this.Step3Schema, this.Step4Schema];
 
     render() {
         const {step, titles} = this.state;

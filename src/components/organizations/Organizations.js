@@ -45,7 +45,6 @@ const Organizations = () => {
     const paginate = pageNr => setCurrentPage(pageNr);
     
     return (
-        
         <section className="organizations" name="organizations">
                 <h2 className="title organizations__title">Komu pomagamy?</h2>
                 <div className="organization-types">

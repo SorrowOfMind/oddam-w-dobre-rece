@@ -5,14 +5,17 @@
     background-repeat: no-repeat;
     background-size: 60%;
     background-position: left -50% bottom -1rem;
+    position: relative;
 }
 
 .header__content {
     width: 50%;
-    float: right;
     text-align: center;
     @include fluid-font(14px, 30px);
-    padding: 10% 4rem;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
 }
 
 .giveaway-header__content {
@@ -44,31 +47,35 @@
     }
 }
 
+.header__btns {
+    @include flexbox(row, center,center);
+}
+
 .btn {
     background-color: #fff;
     font-weight: 300;
     width: 20rem;
-    font-size: 2.6rem;
-    padding: 1rem 2rem;
+    height: 8rem;
+    @include fluid-font(20px,26px);
     border: 1px solid $color-font-main;
 }
 
 .header__btn:nth-child(1) {
-    margin-right: 2.5rem;
+    margin-right: calc(2.5rem + 1vw);
 }
 
 .header__btn, .steps__btn {
     box-shadow: none;
     transition: box-shadow .2s, color .2s;
     &:hover {
-    box-shadow: inset 0 0 0 50px $color-font-main;
+    box-shadow: inset 0 0 0 60px $color-font-main;
     color: $color-border-yellow;
     }
 }
 
 .giveaway__subtitle {
     font-weight: 300;
-    font-size: 2.5rem;
+    @include fluid-font(18px,25px);
 }
 
 .steps-list {

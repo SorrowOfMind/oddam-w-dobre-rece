@@ -1,4 +1,4 @@
-import {SIGNUP, SIGNUP_ERROR, LOGIN, LOGIN_ERROR, LOGOUT} from '../actions/types';
+import {SIGN_UP, SIGN_UP_ERROR, LOGIN, LOGIN_ERROR, LOGOUT} from '../actions/types';
 const initialState = {
     authError: null,
     signupError: null,
@@ -7,16 +7,16 @@ const initialState = {
 
 const authReducer = (state=initialState, action) => {
     switch(action.type) {
-        case SIGNUP:
+        case SIGN_UP:
             return {
                 ...state,
                 authError: null,
                 signupError: null
             };
-        case SIGNUP_ERROR:
+        case SIGN_UP_ERROR:
             return {
                 ...state,
-                sauthError: action.payload,
+                authError: action.payload.message,
                 signupError: 'Ooops! Something went wrong. Please try again.'
             };
         case LOGIN:

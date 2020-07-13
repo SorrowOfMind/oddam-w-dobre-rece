@@ -1,0 +1,23 @@
+.form__title {
+    font-size: 2.5rem;
+    position: relative;
+    padding: 2rem 6rem 7rem 6rem;
+    &:after {
+        content: url('../../../assets/Decoration.svg');
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.form__btns {
+    font-size: 1.6rem;
+    color: $color-font-alt;
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130%;
+    @include flexbox(row, space-around,center);
+}
