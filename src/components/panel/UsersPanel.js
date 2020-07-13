@@ -34,33 +34,33 @@ const UsersPanel = () => {
         <DeleteUserModal modal={deleteUserModal} setModal={setDeleteUserModal} user={user} callListAllUsersFn={callListAllUsersFn}/>
         <EditUserModal modal={editUserModal} setModal={setEditUserModal} user={user} callListAllUsersFn={callListAllUsersFn}/>
         <div className="users-wrapper">
-            <table className="users-table">
-                <thead className="users-head">
-                    <tr className="users-headers-row">
-                        <th scope="col" className="users-header">Index</th>
-                        <th scope="col" className="users-header">UID</th>
-                        <th scope="col" className="users-header">Email</th>
-                        <th scope="col" className="users-header">Display name</th>
-                        <th scope="col" className="users-header">Photo URL</th>
-                        <th scope="col" className="users-header">Custom claims</th>
-                        <th scope="col" className="users-header">Creation time</th>
-                        <th scope="col" className="users-header">Actions</th>
+            <table className="table">
+                <thead className="table-head">
+                    <tr className="table-headers-row">
+                        <th scope="col" className="table-header">Index</th>
+                        <th scope="col" className="table-header">UID</th>
+                        <th scope="col" className="table-header">Email</th>
+                        <th scope="col" className="table-header">Display name</th>
+                        <th scope="col" className="table-header">Photo URL</th>
+                        <th scope="col" className="table-header">Custom claims</th>
+                        <th scope="col" className="table-header">Creation time</th>
+                        <th scope="col" className="table-header">Actions</th>
                     </tr>
                 </thead>
-                <tbody className="users-body">
+                <tbody className="panel-body">
                     {users && users.map((user, idx) => {
                         return (
-                            <tr key={user.uid} className="user-row">
-                                <td className="user-data">{idx+1}</td>
-                                <td className="user-data">{user.uid}</td>
-                                <td className="user-data">{user.email}</td>
-                                <td className="user-data">{user.displayName ? user.displayName : 'none'}</td>
-                                <td className="user-data">{user.photoURL ? user.photoURL : 'none'}</td>
-                                <td className="user-data">{user.customClaims ? 'admin' : 'none'}</td>
-                                <td className="user-data">{user.metadata.creationTime}</td>
-                                <td className="user-data user-data__btns">
-                                    <button className="user-btn user-btn_edit" onClick={() => chooseUser(user, 'edit')}>EDYTUJ</button>
-                                    <button className="user-btn" onClick={() => chooseUser(user, 'delete')}>USUŃ</button>
+                            <tr key={user.uid} className="table-row">
+                                <td className="table-data">{idx+1}</td>
+                                <td className="table-data">{user.uid}</td>
+                                <td className="table-data">{user.email}</td>
+                                <td className="table-data">{user.displayName ? user.displayName : 'none'}</td>
+                                <td className="table-data">{user.photoURL ? user.photoURL : 'none'}</td>
+                                <td className="table-data">{user.customClaims ? 'admin' : 'none'}</td>
+                                <td className="table-data">{user.metadata.creationTime}</td>
+                                <td className="table-data table-data__btns">
+                                    <button className="table-btn table-btn_edit" onClick={() => chooseUser(user, 'edit')}>EDYTUJ</button>
+                                    <button className="table-btn" onClick={() => chooseUser(user, 'delete')}>USUŃ</button>
                                 </td>
                             </tr>
                         )

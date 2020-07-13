@@ -25,55 +25,68 @@ const OrgPanel = ({currentList}) => {
         <DeleteOrgModal modal={deletionModal} setModal={setDeletionModal} id={currentDoc} collection={currentList} />
         <EditOrgModal  modal={editModal} setModal={setEditModal} id={currentDoc} collection={currentList} />
         <CreateModal modal={createModal} setModal={setCreateModal} collection={currentList} />
-        <div className="org-wrapper">
+        <div className="org-wrapper table-wrapper">
         <button className="admin-org__create" onClick={() => setCreateModal(true)}>Nowa</button>
-        <ul className="admin-org-list">
-            {(foundations && currentList === 'foundations') && foundations.map((org, idx) => {
-                return (
-                    <li key={org.id} className="org-item clearfix">
-                        <p className="org-item__idx">{idx+1}</p>
-                        <p className="org-item__name">Nazwa: {org.name}</p>
-                        <p className="org-item__goal">Cel: {org.goal}</p>
-                        <p className="org-item__arr">Zbiórka: {org.items.join(', ')}</p>
-                        <div className="org-btns-wrapper">
-                            <button className="org-item__btn" onClick={() => chooseOrg(org.id, "edit")}>Edytuj</button>
-                            <button className="org-item__btn org-item__btn_delete" onClick={() => chooseOrg(org.id, "delete")}>Usuń</button>
-                        </div>
-                    </li>
-                )
-            })}
-            {(ngos && currentList === 'ngos') && ngos.map((org, idx) => {
-                return (
-                    <li key={org.id} className="org-item clearfix">
-                        <p className="org-item__idx">{idx+1}</p>
-                        <p className="org-item__name">Nazwa: {org.name}</p>
-                        <p className="org-item__goal">Cel: {org.goal}</p>
-                        <p className="org-item__arr">Zbiórka: {org.items.join(', ')}</p>
-                        <div className="org-btns-wrapper">
-                            <button className="org-item__btn" onClick={() => chooseOrg(org.id, "edit")}>Edytuj</button>
-                            <button className="org-item__btn org-item__btn_delete" onClick={() => chooseOrg(org.id, "delete")}>Usuń</button>
-                        </div>
-                    </li>
-                )
-            })}
-            {(locals && currentList === 'locals') && locals.map((org, idx) => {
-                return (
-                    <li key={org.id} className="org-item clearfix">
-                        <p className="org-item__idx">{idx+1}</p>
-                        <p className="org-item__name">Nazwa: {org.name}</p>
-                        <p className="org-item__goal">Cel: {org.goal}</p>
-                        <p className="org-item__arr">Zbiórka: {org.items.join(', ')}</p>
-                        <div className="org-btns-wrapper">
-                            <button className="org-item__btn" onClick={() => chooseOrg(org.id, "edit")}>Edytuj</button>
-                            <button className="org-item__btn org-item__btn_delete" onClick={() => chooseOrg(org.id, "delete")}>Usuń</button>
-                        </div>
-                    </li>
-                )
-            })}
-        </ul>
+        <table className="table">
+                <thead className="table-head">
+                    <tr className="table-headers-row">
+                        <th scope="col" className="table-header">Index</th>
+                        <th scope="col" className="table-header">Nazwa</th>
+                        <th scope="col" className="table-header">Cel</th>
+                        <th scope="col" className="table-header">Zbiórka</th>
+                        <th scope="col" className="table-header">Akcje</th>
+                    </tr>
+                </thead>
+                <tbody className="table-body">
+                    {(foundations && currentList === 'foundations') && foundations.map((org, idx) => {
+                        return (
+                            <tr key={org.id} className="table-row">
+                                <td className="table-data">{idx+1}</td>
+                                <td className="table-data">{org.name}</td>
+                                <td className="table-data">{org.goal}</td>
+                                <td className="table-data">{org.items.join(', ')}</td>
+                                <td className="table-data table-data__btns">
+                                    <button className="table-btn table-btn_edit" onClick={() => chooseOrg(org.id, "edit")}>EDYTUJ</button>
+                                    <button className="table-btn" onClick={() => chooseOrg(org.id, "delete")}>USUŃ</button>
+                                </td>
+                            </tr>
+                        )
+                    })}
+                    {(ngos && currentList === 'ngos') && ngos.map((org, idx) => {
+                        return (
+                            <tr key={org.id} className="table-row">
+                                <td className="table-data">{idx+1}</td>
+                                <td className="table-data">{org.name}</td>
+                                <td className="table-data">{org.goal}</td>
+                                <td className="table-data">{org.items.join(', ')}</td>
+                                <td className="table-data table-data__btns">
+                                    <button className="table-btn table-btn_edit" onClick={() => chooseOrg(org.id, "edit")}>EDYTUJ</button>
+                                    <button className="table-btn" onClick={() => chooseOrg(org.id, "delete")}>USUŃ</button>
+                                </td>
+                            </tr>
+                        )
+                    })}
+                    {(locals && currentList === 'locals') && locals.map((org, idx) => {
+                        return (
+                            <tr key={org.id} className="table-row">
+                                <td className="table-data">{idx+1}</td>
+                                <td className="table-data">{org.name}</td>
+                                <td className="table-data">{org.goal}</td>
+                                <td className="table-data">{org.items.join(', ')}</td>
+                                <td className="table-data table-data__btns">
+                                    <button className="table-btn table-btn_edit" onClick={() => chooseOrg(org.id, "edit")}>EDYTUJ</button>
+                                    <button className="table-btn" onClick={() => chooseOrg(org.id, "delete")}>USUŃ</button>
+                                </td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>
+
+
         </div>
         </>
     )
 }
 
-export default OrgPanel
+export default OrgPanel;

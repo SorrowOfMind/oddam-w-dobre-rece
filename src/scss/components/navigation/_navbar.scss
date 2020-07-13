@@ -26,6 +26,15 @@
     .link-in {
         font-weight: 600;
     }
+    .link-panel {
+        color: $color-font-alt;
+        margin: 0.5rem;
+        transition: color .2s;
+        &:hover {
+            font-weight: 600;
+            color: $color-font-main;
+        }
+    }
     .link-logout {
         color:$color-font-alt;
         padding-right: 0;

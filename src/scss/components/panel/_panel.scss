@@ -206,10 +206,10 @@
 
 .admin-org__create {
     background-color: $color-create;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     padding: 1rem 2rem;
     position: absolute;
-    right: 0;
+    right: 1rem;
     top: 0;
     transition: background .2s;
     &:hover {
@@ -235,11 +235,11 @@
 
 .org-wrapper {
     position: relative;
-    width: 90%;
+    width: 100%;
     margin: 2rem auto;
-    height: 70%;
+    height: 77%;
     overflow: hidden;
-    padding: 6rem 0 0 0;
+    padding: 6rem 1rem 0 1rem;
 }
 
 .org-item__btn {
@@ -265,9 +265,10 @@
     height: 80%;
     margin: 0 auto;
     padding: 1rem;
+    overflow: hidden
 }
 
-.users-table {
+.table {
     width: 100%;
     font-size: 1.3rem;
     border-collapse: collapse;
@@ -275,11 +276,11 @@
     tr:nth-child(even) {
         background-color: $color-bg;
     }
-    .users-head, .users-body {
+    .table-head, .panel-body {
         // display:table;
         width:100%;
     }
-    .users-header {
+    .table-header {
         padding: 0.5rem;
         font-weight: 600;
         background-color: $color-border-yellow;
@@ -294,16 +295,16 @@
     //     overflow-y: auto;
     //     overflow-x: hidden;
     // }
-    .user-row {
+    .table-row {
         text-align: center;
         border-bottom: 1px solid $color-font-alt;
         padding: 1rem;
         width:100%;
     }
-    .user-data {
+    .table-data {
         padding: 1rem !important;
     }
-    .user-btn {
+    .table-btn {
         background-color: $color-delete;
         color: #fff;
         padding: 0.5rem 1rem;
@@ -312,7 +313,7 @@
             background-color: $color-delete-hover;
         }
     }
-    .user-btn_edit {
+    .table-btn_edit {
         background-color: $color-border-yellow;
         color: $color-font-main;
         transition: background .2s;

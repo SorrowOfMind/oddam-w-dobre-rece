@@ -72,10 +72,9 @@ const EditOrgModal = ({modal, setModal, id, collection}) => {
                         goal: Yup.string().trim().required('Wymagane'),
                         items: Yup.string().trim().required('Wymagane')
                     })}
-                    onSubmit={(values, {resetForm}) => {
+                    onSubmit={(values) => {
                         let itemsArr = values.items.split(',')
                         callUpdateOrgFn({id, collection, values, itemsArr});
-                        resetForm(values);
                     }}
                 >{formik => (
                     <form onSubmit={formik.handleSubmit} className="modal-form">

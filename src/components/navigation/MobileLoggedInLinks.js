@@ -18,6 +18,7 @@ const MobileLoggedInLinks = ({linksVariants, toggleOpen}) => {
         <>
             <Link to="/oddaj-rzeczy" onClick={toggleOpen}><motion.li className="mobile-link-in hamburger-commom-link" variants={linksVariants}>ODDAJ RZECZY</motion.li></Link>
             <Link to="/logout"><motion.li className="mobile-link-in hamburger-commom-link" variants={linksVariants} onClick={handleLogOut}>WYLOGUJ</motion.li></Link>
+            <Link to="/panel"><motion.li className="mobile-link-in hamburger-commom-link" variants={linksVariants} onClick={handleLogOut}>{auth.email}</motion.li></Link>
         </>
     )
 }
