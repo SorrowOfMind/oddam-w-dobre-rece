@@ -102,9 +102,9 @@ class GiveAwayForm extends Component {
             <form onSubmit={formik.handleSubmit} className="giveaway-form">
                 {step <= 4 && <p className="step-num">Krok {step}/4</p>}
                 {step === 1 && <Step1 values={formik.values} />}
-                {step === 2 && <Step2 values={formik.values} />}
+                {step === 2 && <Step2 values={formik.values} errors={formik.errors}/>}
                 {step === 3 && <Step3 values={formik.values} errors={formik.errors}/>}
-                {step === 4 && <Step4 />}
+                {step === 4 && <Step4 errors={formik.errors}/>}
                 {step === 5 && <GiveAwaySummary values={formik.values} />}
                 {step === 6 && <GiveAwayThanks />}
                 <div className="giveaway__btns-wrapper">

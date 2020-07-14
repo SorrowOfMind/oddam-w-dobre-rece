@@ -17,7 +17,6 @@ const Step3 = ({values, errors}) => {
                 errorclass="step-error"
                 errors={errors.localization}
                 />
-            {/* {errors.localization && <div className="step-error">{errors.localization}</div>} */}
             <h2 className="step__subtitle">Komu chcesz pomóc?</h2>
             <div className="checkbox-group">
                 {groups.map(group => {
