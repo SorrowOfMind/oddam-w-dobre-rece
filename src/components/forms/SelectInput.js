@@ -8,11 +8,11 @@ const SelectInput = ({options, values, errors, ...props}) => {
     return (
         <div className={isOpen ? "select-wrapper select-arrow-up" : "select-wrapper select-arrow-down"}>
             <div className="pseudo-select">{values[props.name] ? values[props.name] : '\u2014 wybierz \u2014'}</div>
-            <Field as="select" {...field} {...props} onClick={handleMenu}>
+            <Field as="select" {...field} {...props} onClick={handleMenu} >
                 {options.map(option => <option key={option}>{option}</option>)}
             </Field>
-            {meta.touched && errors ? (
-            <div className={props.errorclass}>{errors}</div>
+            {meta.touched && meta.error ? (
+            <div className={props.errorclass}>{meta.error}</div>
             ) : null}
         </div>
     )

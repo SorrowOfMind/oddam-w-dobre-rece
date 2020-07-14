@@ -3,12 +3,12 @@ import React from 'react';
 import TextInput from './TextInput';
 import TextareaInput from './TextareaInput';
 
-const Step4 = () => {
+const Step4 = ({errors}) => {
     const addressData = [
-        {label: 'Ulica', name: "street"},
-        {label: 'Miast', name: "city"},
-        {label: 'Kod pocztowy', name: "postCode"},
-        {label: 'Numer telefonu', name: "phone"},
+        {label: 'Ulica*', name: "street"},
+        {label: 'Miasto*', name: "city"},
+        {label: 'Kod pocztowy (xx-xxx)*', name: "postCode"},
+        {label: 'Numer telefonu (9 cyfr)*', name: "phone"},
     ]
     return (
         <div className="step-4">
@@ -25,7 +25,8 @@ const Step4 = () => {
                                 name={input.name}
                                 type="text"
                                 className="step-4__txt-input"
-                                errorclass="step-error"/>
+                                errorclass="step-error"
+                                />
                         </div>)
                     })}
                 </div>

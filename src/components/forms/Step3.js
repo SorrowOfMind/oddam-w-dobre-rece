@@ -8,20 +8,20 @@ const Step3 = ({values, errors}) => {
     const groups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     return (
         <div className="step-3">
-            <h1 className="step__title">Lokalizacja:</h1>
+            <h1 className="step__title">Lokalizacja*</h1>
             <SelectInput
                 className="step-2__input"
                 name="localization"
                 options={options}
                 values={values}
                 errorclass="step-error"
-                errors={errors.localization}
                 />
-            <h2 className="step__subtitle">Komu chcesz pomóc?</h2>
+            <h2 className="step__subtitle">Komu chcesz pomóc?*</h2>
             <div className="checkbox-group">
                 {groups.map(group => {
                     return (
                         <CheckboxInput
+                            key={group}
                             name="helpGroups"
                             value={group}
                             className="step-3__checkbox"
