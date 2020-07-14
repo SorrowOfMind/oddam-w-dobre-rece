@@ -10,7 +10,7 @@ const Step1 = ({values}) => {
            <Field component="div" name="items">
             <RadioInput 
                 label="ubrania, które nadają się do ponownego użycia"
-                labelClass="step-1__label"
+                labelclass="step-1__label"
                 className="step-1__input"
                 name="items"
                 value="ubrania, które nadają się do ponownego użycia"
@@ -18,7 +18,7 @@ const Step1 = ({values}) => {
             />
             <RadioInput 
                 label="ubrania do wyrzucenia"
-                labelClass="step-1__label"
+                labelclass="step-1__label"
                 className="step-1__input"
                 name="items"
                 value="ubrania do wyrzucenia"
@@ -26,7 +26,7 @@ const Step1 = ({values}) => {
             />
             <RadioInput
                 label="zabawki"
-                labelClass="step-1__label"
+                labelclass="step-1__label"
                 className="step-1__input"
                 name="items"
                 value="zabawki"
@@ -34,7 +34,7 @@ const Step1 = ({values}) => {
             />
             <RadioInput 
                 label="książki"
-                labelClass="step-1__label"
+                labelclass="step-1__label"
                 className="step-1__input"
                 name="items"
                 value="książki"
@@ -42,7 +42,7 @@ const Step1 = ({values}) => {
             />
             <RadioInput 
                 label="inne"
-                labelClass="step-1__label"
+                labelclass="step-1__label"
                 className="step-1__input"
                 name="items"
                 value="inne"

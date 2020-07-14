@@ -65,7 +65,7 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                 <span className="modal-close" onClick={closeByX}>x</span>
                 <p className="modal-title">Edytuj dane użytkownika</p>
                 <Formik
-                    initialValues={{email: user.email, phoneNumber: (user.phoneNumber ? user.phoneNumber : ''), emailVerified: user.emailVerified, password: user.passwordHash, displayName: (user.displayName ? user.displayName : ''), photoURL: (user.photoURL ? user.photoURL : ''), disabled: user.disabled}}
+                    initialValues={{email: user.email, phoneNumber: (user.phoneNumber ? user.phoneNumber : ''), emailVerified: user.emailVerified, password: '', displayName: (user.displayName ? user.displayName : ''), photoURL: (user.photoURL ? user.photoURL : ''), disabled: user.disabled}}
                     validationSchema={Yup.object({
                         email: Yup.string()
                             .email('Email jest niepoprawny')
@@ -75,8 +75,8 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         emailVerified: Yup.boolean()
                             .required('Wymagane'),
                         password: Yup.string()
-                            .min(6, 'Hasło min. 6 znaków')
-                            .required('Wymagane'),
+                            .min(6, 'Hasło min. 6 znaków'),
+                            // .required('Wymagane'),
                         displayName: Yup.string(),
                         photoURL: Yup.string(),
                         disabled: Yup.boolean()
@@ -93,9 +93,9 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Email"
-                                labelClass="modal-label"
+                                labelclass="modal-label"
                                 className="modal__input"
-                                errorClass="modal__error"
+                                errorclass="modal__error"
                                 name="email"
                                 type="email"
                             />
@@ -103,9 +103,9 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Phone Number (E.64 format)"
-                                labelClass="modal-label"
+                                labelclass="modal-label"
                                 className="modal__input"
-                                errorClass="modal__error"
+                                errorclass="modal__error"
                                 name="phoneNumber"
                                 type="text"
                             />
@@ -113,8 +113,8 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Email Verified? (true/false)"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="emailVerified"
                                 type="text"
@@ -123,8 +123,8 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Password (unhashed)"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="password"
                                 type="text"
@@ -133,8 +133,8 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Display Name"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="displayName"
                                 type="text"
@@ -143,8 +143,8 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Photo URL"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="photoURL"
                                 type="text"
@@ -153,8 +153,8 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Disabled? (true/false)"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="disabled"
                                 type="text"

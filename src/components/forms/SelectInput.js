@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Field, useField} from 'formik';
 
-const SelectInput = ({options, values, ...props}) => {
+const SelectInput = ({options, values, errors, ...props}) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleMenu = () => setIsOpen(prevOpen => !prevOpen);
     const [field, meta] = useField(props);
@@ -11,8 +11,8 @@ const SelectInput = ({options, values, ...props}) => {
             <Field as="select" {...field} {...props} onClick={handleMenu}>
                 {options.map(option => <option key={option}>{option}</option>)}
             </Field>
-            {meta.touched && meta.error ? (
-            <div className={props.errorClass}>{meta.error}</div>
+            {meta.touched && errors ? (
+            <div className={props.errorclass}>{errors}</div>
             ) : null}
         </div>
     )

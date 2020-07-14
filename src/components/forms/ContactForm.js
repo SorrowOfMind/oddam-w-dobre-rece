@@ -51,8 +51,8 @@ const ContactForm = () => {
                 <div className="input-wrapper input-wrapper__name">
                     <TextInput 
                         label="Wpisz swoje imię"
-                        labelClass="contact__label"
-                        errorClass="contact__error"
+                        labelclass="contact__label"
+                        errorclass="contact__error"
                         className="contact__input"
                         name="name"
                         type="text"
@@ -62,8 +62,8 @@ const ContactForm = () => {
                 <div className="input-wrapper input-wrapper__email">
                     <TextInput 
                         label="Wpisz swój email"
-                        labelClass="contact__label"
-                        errorClass="contact__error"
+                        labelclass="contact__label"
+                        errorclass="contact__error"
                         className="contact__input"
                         name="email"
                         type="email"
@@ -73,10 +73,10 @@ const ContactForm = () => {
                 <div className="textarea-wrapper">
                     <TextareaInput 
                         label="Wpisz swoją wiadomość"
-                        labelClass="contact__label"
+                        labelclass="contact__label"
                         name="msg"
                         className="contact__message contact__input"
-                        errorClass="contact__error  msg__error"
+                        errorclass="contact__error  msg__error"
                         cols="30"
                         row="10"
                         placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla eligendi aliquid doloremque, dignissimos id sequi! Deserunt delectus doloremque quae veniam animi. Deserunt delectus doloremque quae veniam animi."

@@ -2,14 +2,6 @@ import React from 'react';
 
 const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList}) => {
 
-    // const callListAllUsersFn = () => {
-    //     const listAllUsers = firebase.functions().httpsCallable('listAllUsers');
-    //     listAllUsers()
-    //     .then(result => console.log(result.data))
-    //     .catch(err => console.log(err))
-    // }
-
-
     return (
         <div className="side-panel">
             <h1 className="panel-title">Twoje Konto</h1>
@@ -23,6 +15,7 @@ const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchL
                     <p>{username}</p>
                     <button className="btn__user-edit" onClick={() => setUserModal(true)}>ZMIEŃ</button>
                 </div>
+                <button className="btn__admin-2" onClick={() => switchList('common')}>TWOJE LICZBY</button>
                 {admin &&
                 <div className="admin-section">
                     <button className="btn__admin-1" onClick={() => setAdminModal(true)}>NADAJ UPRAWNIENIA</button>

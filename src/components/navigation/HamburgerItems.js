@@ -37,7 +37,7 @@ const linksVariants = {
     }
 }
 
-const HamburgerItems = ({isOpen, toggleOpen}) => {
+const HamburgerItems = ({isOpen, toggleOpen, homePage}) => {
     const auth = useSelector(state => state.firebase.auth)
     const links = auth.uid ? <MobileLoggedInLinks linksVariants={linksVariants} toggleOpen={toggleOpen}/> : <MobileLoggedOutLinks linksVariants={linksVariants} toggleOpen={toggleOpen} />;
     const scrollLinks = [
@@ -64,7 +64,7 @@ const HamburgerItems = ({isOpen, toggleOpen}) => {
             <Link to="/">
                 <motion.li variants={linksVariants} className="hamburger-commom-link" onClick={toggleOpen}>Start</motion.li>
             </Link>
-            {scrollLinks.map(link => (
+            {homePage && scrollLinks.map(link => (
                 <ScrollLink
                     to={link.to}
                     key={link.to}

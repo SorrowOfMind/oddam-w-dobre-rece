@@ -8,6 +8,7 @@ const initialState = {
 const authReducer = (state=initialState, action) => {
     switch(action.type) {
         case SIGN_UP:
+            console.log('user successfully signed up')
             return {
                 ...state,
                 authError: null,
