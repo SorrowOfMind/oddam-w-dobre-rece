@@ -42,32 +42,32 @@ const SignUpForm = () => {
                     <div className="input-wrapper">
                         <TextInput 
                             label="Email"
-                            labelClass="form__label-1"
+                            labelclass="form__label-1"
                             className="form__input"
                             type="email"
                             name="email"
-                            errorClass="form__error form__error-signup"
+                            errorclass="form__error form__error-signup"
                             autoFocus
                         />
                     </div>
                     <div className="input-wrapper">
                         <TextInput 
                             label="Hasło"
-                            labelClass="form__label-2"
+                            labelclass="form__label-2"
                             className="form__input"
                             type="password"
                             name="password"
-                            errorClass="form__error form__error-signup"
+                            errorclass="form__error form__error-signup"
                         />
                     </div>
                     <div className="input-wrapper">
                         <TextInput 
                             label="Powtórz hasło"
-                            labelClass="form__label-3"
+                            labelclass="form__label-3"
                             className="form__input"
                             type="password"
                             name="password2"
-                            errorClass="form__error form__error-signup"
+                            errorclass="form__error form__error-signup"
                         />
                     </div>
                     {authErr ? <div className="form__error">{authErr}</div> : null}

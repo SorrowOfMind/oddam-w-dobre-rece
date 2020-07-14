@@ -23,7 +23,7 @@ const sidebarVariants = {
   }
 };
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({homePage}) => {
     const [isOpen, toggleOpen] = useCycle(false, true);
    
     return (
@@ -34,7 +34,7 @@ const HamburgerMenu = () => {
             >
              <motion.div className="background" variants={sidebarVariants} />
              <HamburgerToggle toggle={() => toggleOpen()} />
-             <HamburgerItems isOpen={isOpen} toggleOpen={toggleOpen}/>
+             <HamburgerItems isOpen={isOpen} toggleOpen={toggleOpen} homePage={homePage}/>
         </motion.div>
     )
 }

@@ -28,7 +28,7 @@ const LogInForm = () => {
                     <div className="input-wrapper">
                         <TextInput 
                             label="Email"
-                            labelClass="form__label-1"
+                            labelclass="form__label-1"
                             name="email"
                             type="email"
                             className="form__input"
@@ -37,7 +37,7 @@ const LogInForm = () => {
                     <div className="input-wrapper">
                         <TextInput 
                             label="Hasło"
-                            labelClass="form__label-2"
+                            labelclass="form__label-2"
                             type="password"
                             name="password"
                             className="form__input"

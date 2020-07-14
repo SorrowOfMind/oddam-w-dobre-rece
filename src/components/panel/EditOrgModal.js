@@ -81,9 +81,9 @@ const EditOrgModal = ({modal, setModal, id, collection}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Nazwa"
-                                labelClass="modal-label"
+                                labelclass="modal-label"
                                 className="modal__input"
-                                errorClass="modal__error"
+                                errorclass="modal__error"
                                 name="name"
                                 type="text"
                             />
@@ -91,8 +91,8 @@ const EditOrgModal = ({modal, setModal, id, collection}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Cel"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="goal"
                                 type="text"

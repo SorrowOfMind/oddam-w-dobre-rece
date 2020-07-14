@@ -21,11 +21,11 @@ const Step4 = () => {
                         <div className="step-4-input-wrapper" key={input.name}>
                             <TextInput
                                 label={input.label}
-                                labelClass="step-4__label"
+                                labelclass="step-4__label"
                                 name={input.name}
                                 type="text"
                                 className="step-4__txt-input"
-                                errorClass="step-error"/>
+                                errorclass="step-error"/>
                         </div>)
                     })}
                 </div>
@@ -34,25 +34,25 @@ const Step4 = () => {
                     <div className="step-4-input-wrapper">
                         <TextInput
                             label="Data"
-                            labelClass="step-4__label"
+                            labelclass="step-4__label"
                             name="date"
                             type="date"
                             className="step-4__txt-input"
-                            errorClass="step-error"/>
+                            errorclass="step-error"/>
                     </div>
                     <div className="step-4-input-wrapper">
                         <TextInput
                             label="Godzina"
-                            labelClass="step-4__label"
+                            labelclass="step-4__label"
                             name="time"
                             type="time"
                             className="step-4__txt-input"
-                            errorClass="step-error"/>
+                            errorclass="step-error"/>
                     </div>
                     <div className="step-4-input-wrapper">
                         <TextareaInput
                             label="Uwagi dla kuriera"
-                            labelClass="step-4__label step-4__label_last"
+                            labelclass="step-4__label step-4__label_last"
                             name="note"
                             className="step-4__txt-input step-4__txtarea-input"/>
                     </div>
