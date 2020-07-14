@@ -58,7 +58,7 @@ class GiveAwayForm extends Component {
                 .matches(/^[0-9]{2}-[0-9]{3}$/, 'Kod pocztowy w formacie xx-xxx')
                 .required('Wymagane'),
         phone: Yup.string()
-                .matches(/[0-9]{9}/, '9 cyfr')
+                .matches(/[0-9]{9}/, '9 cyfr w ciągu')
                 .required('Wymagane'),
         date: Yup.string().required('Wymagane'),
         time: Yup.string().required('Wymagane')
@@ -84,6 +84,8 @@ class GiveAwayForm extends Component {
                 time: '',
                 note: ''
             }}
+            validateOnChange={false}
+            validateOnBlur={false}
             validationSchema={this.schemaArray[step-1]}
             onSubmit={async (values, {resetForm}) => {
                 if (step === 5) {
@@ -102,9 +104,9 @@ class GiveAwayForm extends Component {
             <form onSubmit={formik.handleSubmit} className="giveaway-form">
                 {step <= 4 && <p className="step-num">Krok {step}/4</p>}
                 {step === 1 && <Step1 values={formik.values} />}
-                {step === 2 && <Step2 values={formik.values} errors={formik.errors}/>}
+                {step === 2 && <Step2 values={formik.values} />}
                 {step === 3 && <Step3 values={formik.values} errors={formik.errors}/>}
-                {step === 4 && <Step4 errors={formik.errors}/>}
+                {step === 4 && <Step4 />}
                 {step === 5 && <GiveAwaySummary values={formik.values} />}
                 {step === 6 && <GiveAwayThanks />}
                 <div className="giveaway__btns-wrapper">

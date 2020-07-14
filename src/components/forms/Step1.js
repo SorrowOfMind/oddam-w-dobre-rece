@@ -6,7 +6,7 @@ import RadioInput from './RadioInput';
 const Step1 = ({values}) => {
     return (
         <div className="step-1">
-           <h1 className="step__title">Zaznacz co chcesz oddać</h1>
+           <h1 className="step__title">Zaznacz co chcesz oddać*</h1>
            <Field component="div" name="items">
             <RadioInput 
                 label="ubrania, które nadają się do ponownego użycia"

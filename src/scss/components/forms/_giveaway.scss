@@ -24,7 +24,7 @@
 }
 
 .step__subtitle {
-    @include fluid-font(15px,20px);
+    @include fluid-font(13px,20px);
     font-weight: 600;
     padding: 3rem 0 1.5rem 0;
 }
@@ -34,20 +34,20 @@
 }
 
 .step-1__label {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 300;
     padding: 2rem 1rem 2rem 3rem;
 }
 
 .step-2__label {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding-right: 2rem;
     font-weight: 300;
     display: inline-block;
 }
 
 .step-4__label {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 300;
     padding-right: 4rem;
     max-width: 34%;
@@ -188,6 +188,10 @@ select::-ms-expand {
     display: none;
 }
 
+.select-group {
+    position: relative;
+}
+
 .checkbox-group {
     max-width: 50rem;
     min-width: 14rem;
@@ -256,7 +260,7 @@ select::-ms-expand {
     font-size: 1.2rem;
     padding: 0.5rem;
     color: $color-font-main;
-    min-width: 15rem;
+    min-width: 13rem;
     resize: none;
 }
 
@@ -303,9 +307,9 @@ select::-ms-expand {
 
 .step-error {
     position: absolute;
-    bottom : -1.7rem;
+    bottom : -1.5rem;
     color: red;
-    font-size: 1.3rem;
+    font-size: 1rem;
     width: 200%;
 }
 

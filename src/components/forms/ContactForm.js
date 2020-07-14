@@ -45,8 +45,7 @@ const ContactForm = () => {
                 postMsg(values);
                 resetForm(values);
             }}
-        >
-            {formik => (
+        >{formik => (
                 <form onSubmit={formik.handleSubmit} className="contact-form">
                 <div className="input-wrapper input-wrapper__name">
                     <TextInput 

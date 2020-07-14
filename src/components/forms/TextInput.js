@@ -6,7 +6,7 @@ const TextInput = ({label, ...props}) => {
     return (
         <>
             <label htmlFor={props.id || props.name} className={props.labelclass}>{label}</label>
-            <input className={props.className} {...field} {...props}/>
+            <input className={props.className} {...field} {...props} />
             {meta.touched && meta.error ? (
             <div className={props.errorclass} >{meta.error}</div>
             ) : null}

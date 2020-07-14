@@ -13,10 +13,14 @@ import firebase from './firebase/config';
 const rrfConfig = {
     useFirestoreForProfile: true,
     userProfile: 'users',
+    updateProfileOnLogin: true,
     onAuthStateChanged: (authData, firebase, dispatch) => {
         if (!authData) {
             dispatch({type: actionTypes.CLEAR_DATA})
         }
+    },
+    preserveOnLogin: {
+        profile: ['isLoaded']
     }
 }
 

@@ -101,8 +101,8 @@ const EditOrgModal = ({modal, setModal, id, collection}) => {
                         <div className="modal-input-wrapper">
                             <TextInput 
                                 label="Zbierane rzeczy (po przecinku)"
-                                labelClass="modal-label"
-                                errorClass="modal__error"
+                                labelclass="modal-label"
+                                errorclass="modal__error"
                                 className="modal__input"
                                 name="items"
                                 type="text"
