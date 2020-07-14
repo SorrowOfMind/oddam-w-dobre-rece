@@ -6,7 +6,7 @@ const CheckboxInput = ({label, ...props}) => {
     return (
         <div className="checkbox-wrapper">
             <input className={props.className} {...field} {...props} type="checkbox" />
-            <label htmlFor={props.name} className={props.labelClass}>{label}</label>
+            <label htmlFor={props.name} className={props.labelclass}>{label}</label>
         </div>
     )
 }

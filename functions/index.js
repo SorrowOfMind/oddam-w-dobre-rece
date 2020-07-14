@@ -1,5 +1,4 @@
 const functions = require('firebase-functions');
-const cors = require('cors')({origin: true});
 const admin = require('firebase-admin');
 admin.initializeApp();
 
@@ -86,15 +85,28 @@ exports.userDeleted = functions.auth.user().onDelete(user => {
 exports.updateUser = functions.https.onCall((data, context) => {
     const {values, uid, photo, disName, phone} = data;
     if (context.auth.token.admin !== true) return {error: 'Tylko admin może edytować użytkowników'}
-    return admin.auth().updateUser(uid, {
-        email: values.email,
-        phoneNumber: phone,
-        emailVerified: values.emailVerified,
-        password: values.password,
-        displayName: disName,
-        photoURL: photo,
-        disabled: values.disabled
-    })
+    if(values.password) {
+        return admin.auth().updateUser(uid, {
+            email: values.email,
+            phoneNumber: phone,
+            emailVerified: values.emailVerified,
+            password: values.password,
+            displayName: disName,
+            photoURL: photo,
+            disabled: values.disabled
+        })
         .then(() =>  ({message: `User ${data.uid} successfully updated`}))
         .catch(err => console.log('error', err))
+    } else {
+        return admin.auth().updateUser(uid, {
+            email: values.email,
+            phoneNumber: phone,
+            emailVerified: values.emailVerified,
+            displayName: disName,
+            photoURL: photo,
+            disabled: values.disabled
+        })
+        .then(() =>  ({message: `User ${data.uid} successfully updated`}))
+        .catch(err => console.log('error', err))
+    }
 })

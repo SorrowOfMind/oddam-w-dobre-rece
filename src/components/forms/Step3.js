@@ -5,7 +5,7 @@ import TextInput from './TextInput';
 
 const Step3 = ({values, errors}) => {
     const options = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
-    const groups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepeosprawnym", "osobom starszym"];
+    const groups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     return (
         <div className="step-3">
             <h1 className="step__title">Lokalizacja:</h1>
@@ -14,8 +14,10 @@ const Step3 = ({values, errors}) => {
                 name="localization"
                 options={options}
                 values={values}
-                errorClass="step-error"
+                errorclass="step-error"
+                errors={errors.localization}
                 />
+            {/* {errors.localization && <div className="step-error">{errors.localization}</div>} */}
             <h2 className="step__subtitle">Komu chcesz pomóc?</h2>
             <div className="checkbox-group">
                 {groups.map(group => {
@@ -25,7 +27,7 @@ const Step3 = ({values, errors}) => {
                             value={group}
                             className="step-3__checkbox"
                             label={group}
-                            labelClass="step-3__group"
+                            labelclass="step-3__group"
                             defaultChecked={values.helpGroups.includes(group)}/>
                     )
                 })}

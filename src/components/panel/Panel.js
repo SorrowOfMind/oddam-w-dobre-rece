@@ -33,7 +33,7 @@ const Panel = () => {
     const switchList = collection => setCurrentList(collection)
 
     useEffect(() => {
-        checkIfAdmin();
+            checkIfAdmin();
     }, [])
 
     const checkIfAdmin = () => {
