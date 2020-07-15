@@ -47,6 +47,7 @@ const ContactForm = () => {
             }}
         >{formik => (
                 <form onSubmit={formik.handleSubmit} className="contact-form">
+                <div className="contact-inputs-wrapper">
                 <div className="input-wrapper input-wrapper__name">
                     <TextInput 
                         label="Wpisz swoje imię"
@@ -68,6 +69,7 @@ const ContactForm = () => {
                         type="email"
                         placeholder="abc@cos.com"
                     />
+                </div>
                 </div>
                 <div className="textarea-wrapper">
                     <TextareaInput 

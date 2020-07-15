@@ -19,13 +19,13 @@
         font-size: 1.3rem;
         float: right;
     }
+    .contact-inputs-wrapper {
+        @include flexbox(row,space-between,center);
+    }
     .input-wrapper {
         display: inline-block;
         padding-bottom: 2rem;
         width: 46%;
-    }
-    .input-wrapper__name {
-        margin-right: 2rem;
     }
     .textarea-wrapper {
         padding-bottom: 3rem;

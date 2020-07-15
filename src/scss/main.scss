@@ -22,6 +22,7 @@
 @media screen and (max-width: 1024px) {
     @import './components/sections/footer-md.scss';
     @import './components/forms/giveaway-md.scss';
+    @import './components/panel/panel-md.scss';
 }
 
 @media screen and (max-width: 900px) {
@@ -39,6 +40,7 @@
     @import './components/sections/statistics-sm.scss';
     @import './components/forms/forms-sm.scss';
     @import './components/forms/giveaway-sm.scss';
+    @import './components/panel/panel-sm.scss';
 }
 
 @media screen and (max-width: 632px) {

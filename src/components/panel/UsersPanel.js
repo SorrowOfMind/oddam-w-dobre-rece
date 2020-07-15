@@ -14,7 +14,6 @@ const UsersPanel = () => {
         const listAllUsers = firebase.functions().httpsCallable('listAllUsers');
         listAllUsers()
             .then(result => setUsers(result.data))
-            // .then(result => console.log(result.data))
             .catch(err => console.log(err))
     }
 
@@ -33,10 +32,12 @@ const UsersPanel = () => {
         {!users && <Loader />}
         <DeleteUserModal modal={deleteUserModal} setModal={setDeleteUserModal} user={user} callListAllUsersFn={callListAllUsersFn}/>
         <EditUserModal modal={editUserModal} setModal={setEditUserModal} user={user} callListAllUsersFn={callListAllUsersFn}/>
-        <div className="users-wrapper">
+        <div className="users-wrapper ">
+        <button className="admin-users__refresh" onClick={callListAllUsersFn}>Odśwież</button>
+        <div className="table-wrapper">
             <table className="table">
                 <thead className="table-head">
-                    <tr className="table-headers-row">
+                    <tr className="table-headers-row table-row">
                         <th scope="col" className="table-header">Index</th>
                         <th scope="col" className="table-header">UID</th>
                         <th scope="col" className="table-header">Email</th>
@@ -47,7 +48,7 @@ const UsersPanel = () => {
                         <th scope="col" className="table-header">Actions</th>
                     </tr>
                 </thead>
-                <tbody className="panel-body">
+                <tbody className="table-body">
                     {users && users.map((user, idx) => {
                         return (
                             <tr key={user.uid} className="table-row">
@@ -67,6 +68,7 @@ const UsersPanel = () => {
                     })}
                 </tbody>
             </table>
+            </div>
         </div>
         </>
     )

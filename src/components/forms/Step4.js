@@ -3,7 +3,7 @@ import React from 'react';
 import TextInput from './TextInput';
 import TextareaInput from './TextareaInput';
 
-const Step4 = ({errors}) => {
+const Step4 = () => {
     const addressData = [
         {label: 'Ulica*', name: "street"},
         {label: 'Miasto*', name: "city"},

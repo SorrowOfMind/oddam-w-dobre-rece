@@ -12,11 +12,10 @@
 
 .contact-form {
     .input-wrapper {
-        display: block;
         width: 100%;
     }
-    .input-wrapper__name {
-        margin-right: 0;
+    .contact-inputs-wrapper {
+        @include flexbox(column,flex-start,center);
     }
     .textarea-wrapper {
         margin-top: 0;

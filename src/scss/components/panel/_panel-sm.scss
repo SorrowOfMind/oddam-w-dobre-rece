@@ -1,0 +1,49 @@
+.panel-wrapper {
+    @include flexbox(column, flex-start, center);
+    overflow: auto;
+    top: 9rem;
+    // height: 100%;
+}
+
+.side-panel {
+    width: 100%;
+    padding: 0 0 3rem 0;
+}
+
+.main-panel {
+    width: 100%;
+    padding: 0 0 4rem 0;
+}
+
+.users-wrapper, .table-wrapper {
+    max-height: 600px;
+    height: 75%;
+
+}
+
+.panel-title {
+    padding: 1rem 0;
+}
+
+.side-panel__content {
+    width: 50%;
+    min-width: 330px;
+    margin: 0 auto;
+}
+
+[class^="btn__admin-"] {
+    margin-bottom: 1rem;
+}
+
+.btn__admin-6 {
+    margin: 0;
+}
+
+.user-aid-list {
+    min-width: 360px;
+    padding-bottom: 3rem;
+    .user-aid-item {
+        margin-bottom: 1rem;
+        @include flexbox(row,flex-start,center);
+    }
+}

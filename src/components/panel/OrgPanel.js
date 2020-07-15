@@ -25,8 +25,9 @@ const OrgPanel = ({currentList}) => {
         <DeleteOrgModal modal={deletionModal} setModal={setDeletionModal} id={currentDoc} collection={currentList} />
         <EditOrgModal  modal={editModal} setModal={setEditModal} id={currentDoc} collection={currentList} />
         <CreateModal modal={createModal} setModal={setCreateModal} collection={currentList} />
-        <div className="org-wrapper table-wrapper">
+        <div className="org-wrapper ">
         <button className="admin-org__create" onClick={() => setCreateModal(true)}>Nowa</button>
+        <div className="table-wrapper org-table-wrapper">
         <table className="table">
                 <thead className="table-head">
                     <tr className="table-headers-row">
@@ -82,8 +83,7 @@ const OrgPanel = ({currentList}) => {
                     })}
                 </tbody>
             </table>
-
-
+            </div>
         </div>
         </>
     )
