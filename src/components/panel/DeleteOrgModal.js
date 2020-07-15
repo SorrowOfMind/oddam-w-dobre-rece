@@ -29,8 +29,6 @@ const DeleteOrgModal = ({modal, setModal, id, collection}) => {
             .then(() => setModal(false))
             .catch(err => console.log('err', JSON.stringify(err)))
     }
-
-    console.log(id, collection);
   
     const closeByBackdrop = e => {
         e.stopPropagation();

@@ -53,9 +53,8 @@ const Organizations = () => {
                     <div className={currentCollection === locals ? 'organization-type-3 active-type' : "organization-type-3"} id="locals" onClick={changeCollection}>Lokalnym zbiórkom</div>
                 </div>
                 <p className="organizations__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
-                {currentRecords && 
-                    <OrganizationRecords records={currentRecords}/>}
-                {currentCollection && 
+                {currentRecords && <OrganizationRecords records={currentRecords}/>}
+                {currentCollection &&
                     <Pagination 
                         paginate={paginate} 
                         numOfRecords={currentCollection.length} 

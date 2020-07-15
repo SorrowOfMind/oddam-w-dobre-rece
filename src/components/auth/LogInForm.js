@@ -22,8 +22,7 @@ const LogInForm = () => {
                   onSubmit={(values, {resetForm}) => {
                       dispatch(logIn(values));
                       resetForm(values);
-                  }}
-                >{formik => (
+                  }}>{formik => (
                     <form className="form" onSubmit={formik.handleSubmit}>
                     <div className="input-wrapper">
                         <TextInput 

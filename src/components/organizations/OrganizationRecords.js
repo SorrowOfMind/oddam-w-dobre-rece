@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const OrganizationRecords = ({records}) => {
     return (
@@ -13,10 +12,6 @@ const OrganizationRecords = ({records}) => {
             ))}
         </ul>
     )
-}
-
-OrganizationRecords.propTypes = {
-    records: PropTypes.array.isRequired
 }
 
 export default OrganizationRecords;

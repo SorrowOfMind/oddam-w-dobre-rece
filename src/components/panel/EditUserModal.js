@@ -76,7 +76,6 @@ const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
                             .required('Wymagane'),
                         password: Yup.string()
                             .min(6, 'Hasło min. 6 znaków'),
-                            // .required('Wymagane'),
                         displayName: Yup.string(),
                         photoURL: Yup.string(),
                         disabled: Yup.boolean()
