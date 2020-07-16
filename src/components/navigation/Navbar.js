@@ -19,9 +19,7 @@ const Navbar = ({history}: NavbarProps) => {
     const url = history.location.pathname;
 
     useEffect(() => {
-        if (url !== '/') {
-            setHomePage(false);
-        }
+        if (url !== '/') setHomePage(false);
         return () => setHomePage(true);
     }, [url])
 

@@ -8,9 +8,7 @@ const LoggedInLinks = () => {
     const dispatch = useDispatch();
     const auth = useSelector(state => state.firebase.auth);
 
-    const handleLogOut = () => {
-        dispatch(logOut);
-    }
+    const handleLogOut = () => dispatch(logOut);
     
     return (
         <>

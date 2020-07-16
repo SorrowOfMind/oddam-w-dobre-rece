@@ -21,7 +21,6 @@ export const logIn = ({email, password}) => dispatch => {
             .catch(err => dispatch({type: LOGIN_ERROR, payload: err.message}))
 }
 
-
 export const logOut = dispatch => {
         firebase.auth().signOut().then(() => dispatch({type: LOGOUT}))
 }

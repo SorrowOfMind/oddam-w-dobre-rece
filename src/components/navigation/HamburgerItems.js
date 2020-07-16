@@ -67,9 +67,7 @@ const HamburgerItems = ({isOpen, toggleOpen, homePage}: HamburgerItemsProps) => 
             initial="closed"
             animate={isOpen ? "open": "closed"}
             className="hamburger-commom-items">
-            <Link to="/">
-                <motion.li variants={linksVariants} className="hamburger-commom-link" onClick={toggleOpen}>Start</motion.li>
-            </Link>
+            <Link to="/"><motion.li variants={linksVariants} className="hamburger-commom-link" onClick={toggleOpen}>Start</motion.li></Link>
             {homePage && scrollLinks.map(link => (
                 <ScrollLink
                     to={link.to}

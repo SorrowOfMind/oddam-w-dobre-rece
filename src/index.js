@@ -18,10 +18,7 @@ const rrfConfig = {
         if (!authData) {
             dispatch({type: actionTypes.CLEAR_DATA})
         }
-    },
-    // preserveOnLogin: {
-    //     profile: ['isLoaded']
-    // }
+    }
 }
 
 const rrfProps = {

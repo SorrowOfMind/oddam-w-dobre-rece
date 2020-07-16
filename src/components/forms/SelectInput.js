@@ -13,6 +13,7 @@ const SelectInput = ({options, values, ...props}: SelectInputProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleMenu = () => setIsOpen(prevOpen => !prevOpen);
     const [field, meta] = useField(props);
+    
     return (
         <div className={isOpen ? "select-wrapper select-arrow-up" : "select-wrapper select-arrow-down"}>
             <div className="pseudo-select">{values[props.name] ? values[props.name] : '\u2014 wybierz \u2014'}</div>

@@ -10,7 +10,6 @@ type UserPanelProps = {
 }
 
 const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList}: UserPanelProps) => {
-
     return (
         <div className="side-panel">
             <div className="side-panel__content">

@@ -34,7 +34,6 @@ const AdminModal = ({modal, setModal}: ModalProps) => {
     const callAddAdminFn = ({email: adminEmail}) => {
         const addAdmin = firebase.functions().httpsCallable('addAdmin');
         addAdmin({email: adminEmail})
-            .then(result => console.log('ok', result.data))
             .then(() => setModal(false))
             .then(() => setAdminEmail(''))
             .catch(err => console.log('err', JSON.stringify(err)))
