@@ -1,5 +1,4 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import {Formik} from 'formik';
 import { motion } from 'framer-motion';
 import firebase from '../../firebase/config';
