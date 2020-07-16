@@ -21,7 +21,14 @@ const modalVariant = {
     }
 }
 
-const DeleteUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+    user: string,
+    callListAllUsersFn: Function
+}
+
+const DeleteUserModal = ({modal, setModal, user, callListAllUsersFn}: ModalProps) => {
 
     const callDeleteUserFn = ({user}) => {
         const uid = user.uid;

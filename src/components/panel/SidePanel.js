@@ -1,6 +1,15 @@
 import React from 'react';
 
-const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList}) => {
+type UserPanelProps = {
+    email: string,
+    username: string,
+    setUserModal: Function,
+    setAdminModal: Function,
+    admin: boolean,
+    switchList: Function
+}
+
+const SidePanel = ({email, username, setUserModal, setAdminModal, admin, switchList}: UserPanelProps) => {
 
     return (
         <div className="side-panel">

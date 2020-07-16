@@ -23,7 +23,11 @@ const sidebarVariants = {
   }
 };
 
-const HamburgerMenu = ({homePage}) => {
+type HamburgerMenuProps = {
+  homePage: boolean
+}
+
+const HamburgerMenu = ({homePage}: HamburgerMenuProps) => {
     const [isOpen, toggleOpen] = useCycle(false, true);
    
     return (

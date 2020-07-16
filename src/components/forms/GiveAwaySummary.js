@@ -2,7 +2,11 @@ import React from 'react';
 import iconShirt from '../../assets/icon-shirt.png'
 import iconRefresh from '../../assets/icon-refresh.png'
 
-const GiveAwaySummary = ({values: {bags, localization, items, helpGroups, street, city, postCode, phone, date, time, note}}) => {
+type GiveAwaySummaryProps = {
+    values: string
+}
+
+const GiveAwaySummary = ({values: {bags, localization, items, helpGroups, street, city, postCode, phone, date, time, note}}: GiveAwayProps) => {
     return (
         <div className="giveaway-summary">
             <h1 className="step__title">Podsumowanie Twojej darowizny</h1>

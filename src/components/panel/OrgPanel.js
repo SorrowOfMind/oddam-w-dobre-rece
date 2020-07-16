@@ -4,7 +4,11 @@ import DeleteOrgModal from './DeleteOrgModal';
 import EditOrgModal from './EditOrgModal';
 import CreateModal from './CreateModal';
 
-const OrgPanel = ({currentList}) => {
+type OrgPanelProps = {
+    currentList: string
+}
+
+const OrgPanel = ({currentList}: OrgPanelProps) => {
     const [deletionModal, setDeletionModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
     const [createModal, setCreateModal] = useState(false);

@@ -25,7 +25,14 @@ const modalVariant = {
     }
 }
 
-const EditOrgModal = ({modal, setModal, id, collection}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+    id: string,
+    collection: Array<Object>
+}
+
+const EditOrgModal = ({modal, setModal, id, collection}: ModalProps) => {
 
     const docRef = useSelector(state => state.firestore.ordered[collection]);
     const doc = docRef.filter(doc => doc.id === id)[0];

@@ -3,7 +3,11 @@ import { Field } from "formik";
 
 import RadioInput from './RadioInput';
 
-const Step1 = ({values}) => {
+type Step1Props = {
+    values: Object
+}
+
+const Step1 = ({values}: Step1Props) => {
     return (
         <div className="step-1">
            <h1 className="step__title">Zaznacz co chcesz oddać*</h1>

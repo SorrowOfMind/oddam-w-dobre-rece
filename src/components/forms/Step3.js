@@ -1,9 +1,15 @@
+
 import React from 'react';
 import SelectInput from './SelectInput';
 import CheckboxInput from './CheckboxInput';
 import TextInput from './TextInput';
 
-const Step3 = ({values, errors}) => {
+type Step3Props = {
+    values: Object,
+    errors: Object
+}
+
+const Step3 = ({values, errors}: StepProps) => {
     const options = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
     const groups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     return (

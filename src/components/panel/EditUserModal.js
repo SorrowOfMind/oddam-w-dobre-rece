@@ -1,5 +1,4 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import {Formik} from 'formik';
 import { motion } from 'framer-motion';
 import firebase from '../../firebase/config';
@@ -25,7 +24,14 @@ const modalVariant = {
     }
 }
 
-const EditUserModal = ({modal, setModal, user, callListAllUsersFn}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+    user: string,
+    callListAllUsersFn: Function
+}
+
+const EditUserModal = ({modal, setModal, user, callListAllUsersFn}: ModalProps) => {
 
     const callUpdateUserFn = ({user, values, disName, photo, phone}) => {
         const uid = user.uid;

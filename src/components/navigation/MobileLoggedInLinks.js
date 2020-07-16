@@ -4,7 +4,12 @@ import {useSelector, useDispatch} from 'react-redux';
 import {logOut} from '../../actions/authActions';
 import {motion} from 'framer-motion';
 
-const MobileLoggedInLinks = ({linksVariants, toggleOpen}) => {
+type MobileLoggedInLinksProps = {
+    linksVariants: Object,
+    toggleOpen: Function
+}
+
+const MobileLoggedInLinks = ({linksVariants, toggleOpen}: MobileLoggedInLinksProps) => {
 
     const dispatch = useDispatch();
     const auth = useSelector(state => state.firebase.auth);

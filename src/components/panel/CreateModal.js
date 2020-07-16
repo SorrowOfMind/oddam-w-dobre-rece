@@ -1,5 +1,4 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import {Formik} from 'formik';
 import { motion } from 'framer-motion';
 import firebase from '../../firebase/config';
@@ -25,7 +24,13 @@ const modalVariant = {
     }
 }
 
-const CreateModal = ({modal, setModal, collection}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+    collection: Array<Object>
+}
+
+const CreateModal = ({modal, setModal, collection}: ModalProps) => {
 
     const callAddOrgFn = ({collection, values, itemsArr}) => {
         const addOrg = firebase.functions().httpsCallable('addOrg');

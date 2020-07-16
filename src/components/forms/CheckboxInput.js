@@ -1,7 +1,17 @@
 import React from 'react';
 import {useField} from 'formik';
 
-const CheckboxInput = ({label, ...props}) => {
+type CheckboxInputProps = {
+    label: string,
+    name: string,
+    className: string,
+    key: string,
+    value: string,
+    labelclass: string,
+    defaultChecked: string
+}
+
+const CheckboxInput = ({label, ...props}: CheckboxInputProps) => {
     const [field, meta] = useField(props);
     return (
         <div className="checkbox-wrapper">
