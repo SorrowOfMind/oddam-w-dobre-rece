@@ -4,10 +4,9 @@
 .*/src/index\.js
 .*/src/store\.js
 .*/functions/index\.js
-.*/src/actions/.*
-.*/src/reducers/.*
+.*/src/actions/
+.*/src/reducers/
 .*/firebase/config\.js
-
 [include]
 
 [libs]
