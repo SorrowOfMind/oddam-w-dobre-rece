@@ -1,6 +1,10 @@
 import React from 'react';
 
-const GiveAwayNote = ({title}) => {
+type GiveAwayNoteProps = {
+    title: string
+}
+
+const GiveAwayNote = ({title}: GiveAwayNoteProps) => {
     return (
         <div className="giveaway-note">
             <h2 className="giveaway-note__title">Ważne!</h2>

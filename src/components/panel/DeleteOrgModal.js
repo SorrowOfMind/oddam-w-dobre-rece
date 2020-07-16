@@ -21,7 +21,14 @@ const modalVariant = {
     }
 }
 
-const DeleteOrgModal = ({modal, setModal, id, collection}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+    id: string,
+    collection: Array<Object>
+}
+
+const DeleteOrgModal = ({modal, setModal, id, collection}: ModalProps) => {
 
     const callDeleteOrgFn = ({id, collection}) => {
         const deleteOrg = firebase.functions().httpsCallable('deleteOrg');

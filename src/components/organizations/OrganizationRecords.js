@@ -1,6 +1,10 @@
 import React from 'react';
 
-const OrganizationRecords = ({records}) => {
+type OrgRecordsProps = {
+    records: Array<Object>
+}
+
+const OrganizationRecords = ({records}: OrgRecordsProps) => {
     return (
         <ul className="organizations-list container">
             {records.map(record => (

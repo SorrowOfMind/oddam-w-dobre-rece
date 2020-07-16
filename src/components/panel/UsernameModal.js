@@ -21,7 +21,12 @@ const modalVariant = {
     }
 }
 
-const UsernameModal = ({modal, setModal}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+}
+
+const UsernameModal = ({modal, setModal}: ModalProps) => {
     const [username, setUsername] = useState('');
 
     const handleChange = e => setUsername(e.target.value);

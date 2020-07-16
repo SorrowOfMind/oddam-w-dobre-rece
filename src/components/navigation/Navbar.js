@@ -7,7 +7,11 @@ import LoggedOutLinks from './LoggedOutLinks';
 import LoggedInLinks from './LoggedInLinks';
 import HamburgerMenu from './HamburgerMenu';
 
-const Navbar = ({history}) => {
+type NavbarProps = {
+    history: Object
+}
+
+const Navbar = ({history}: NavbarProps) => {
     const [homePage, setHomePage] = useState(true);
     const isMobile = useMediaQuery({query: '(max-width: 768px)'});
     const auth = useSelector(state => state.firebase.auth)

@@ -2,7 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion';
 
-const MobileLoggedOutLinks = ({linksVariants, toggleOpen}) => {
+type MobileLoggedOutLinksProps = {
+    linksVariants: Object,
+    toggleOpen: Function
+}
+
+const MobileLoggedOutLinks = ({linksVariants, toggleOpen}: MobileLoggedOutLinksProps) => {
     return (
         <>
             <Link to="/login"><motion.li variants={linksVariants} onClick={toggleOpen} className="mobile-link-out hamburger-commom-link">ZALOGUJ</motion.li></Link>

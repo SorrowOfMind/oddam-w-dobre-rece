@@ -11,7 +11,11 @@ const Path = props => (
   />
 );
 
-const HamburgerToggle = ({ toggle }) => (
+type HamburgerToggleProps = {
+  toggle: boolean,
+}
+
+const HamburgerToggle = ({toggle}: HamburgerToggleProps) => (
   <button onClick={toggle} className="hamburger">
     <svg width="25" height="23" viewBox="-1 0 23 20">
       <Path

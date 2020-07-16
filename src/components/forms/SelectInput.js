@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
 import {Field, useField} from 'formik';
 
-const SelectInput = ({options, values, errors, ...props}) => {
+type SelectInputProps = {
+    options: Array<number> | Array<string>,
+    name: string,
+    values: Object,
+    errorclass: string,
+    className: string
+}
+
+const SelectInput = ({options, values, ...props}: SelectInputProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleMenu = () => setIsOpen(prevOpen => !prevOpen);
     const [field, meta] = useField(props);

@@ -3,7 +3,11 @@ import {useSelector} from 'react-redux';
 import Loader from '../layout/Loader';
 import {useFirestoreConnect} from 'react-redux-firebase';
 
-const CommonPanel = ({uid}) => {
+type CommonPanelProps = {
+    uid: string
+}
+
+const CommonPanel = ({uid}: CommonPanelProps) => {
     const aidNum = useSelector(state => state.firestore.ordered.aid)
 
     useFirestoreConnect([

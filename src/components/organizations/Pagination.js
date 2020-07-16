@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Pagination = ({paginate, numOfRecords, recordsPerPage, currentPage}) => {
+type PaginationProps = {
+    paginate: Function,
+    numOfRecords: number,
+    recordsPerPage: number,
+    currentPage: number
+}
+
+const Pagination = ({paginate, numOfRecords, recordsPerPage, currentPage}: PaginationProps) => {
     const pagesTotal = Math.ceil(numOfRecords/recordsPerPage);
     const pages = Array.from({length: pagesTotal}, (_, idx) => idx + 1);
 

@@ -37,7 +37,13 @@ const linksVariants = {
     }
 }
 
-const HamburgerItems = ({isOpen, toggleOpen, homePage}) => {
+type HamburgerItemsProps = {
+    isOpen: boolean,
+    toggleOpen: Function,
+    homePage: boolean
+}
+
+const HamburgerItems = ({isOpen, toggleOpen, homePage}: HamburgerItemsProps) => {
     const auth = useSelector(state => state.firebase.auth)
     const links = auth.uid ? <MobileLoggedInLinks linksVariants={linksVariants} toggleOpen={toggleOpen}/> : <MobileLoggedOutLinks linksVariants={linksVariants} toggleOpen={toggleOpen} />;
     const scrollLinks = [

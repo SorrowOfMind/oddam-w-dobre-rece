@@ -10,9 +10,20 @@ import Step3 from './Step3';
 import Step4 from './Step4';
 import GiveAwaySummary from './GiveAwaySummary';
 import GiveAwayThanks from '../layout/GiveAwayThanks';
-import { giveAway } from '../../actions/giveawayActions';
+import {giveAway} from '../../actions/giveawayActions';
 
-class GiveAwayForm extends Component {
+type GiveAwayFormProps = {
+    giveAway: Function,
+    uid: string,
+    giveawayStatus: boolean
+}
+
+type GiveAwayFormState = {
+    step: number,
+    titles: Array<string>
+}
+
+class GiveAwayForm extends Component<GiveAwayFormProps, GiveAwayFormState> {
     state = {
         step: 1,
         titles: [

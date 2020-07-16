@@ -1,18 +1,18 @@
 .panel-wrapper {
     @include flexbox(column, flex-start, center);
     overflow: auto;
-    top: 9rem;
-    // height: 100%;
+    top: 8rem;
+    min-height: 850px;
 }
 
 .side-panel {
     width: 100%;
-    padding: 0 0 3rem 0;
+    padding: 0 0 1rem 0;
 }
 
 .main-panel {
     width: 100%;
-    padding: 0 0 4rem 0;
+    padding: 0 0 2rem 0;
 }
 
 .users-wrapper, .table-wrapper {
@@ -29,21 +29,28 @@
     width: 50%;
     min-width: 330px;
     margin: 0 auto;
+
 }
 
 [class^="btn__admin-"] {
     margin-bottom: 1rem;
 }
 
-.btn__admin-6 {
-    margin: 0;
+.btn__admin-6, .btn__admin-5 {
+    margin-bottom: 0;
 }
 
 .user-aid-list {
+    width: 50%;
     min-width: 360px;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     .user-aid-item {
         margin-bottom: 1rem;
         @include flexbox(row,flex-start,center);
     }
+}
+
+.user-aid__num {
+    width: 5rem;
+    height: 5rem;
 }

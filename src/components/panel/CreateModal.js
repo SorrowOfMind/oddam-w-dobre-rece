@@ -24,7 +24,13 @@ const modalVariant = {
     }
 }
 
-const CreateModal = ({modal, setModal, collection}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+    collection: Array<Object>
+}
+
+const CreateModal = ({modal, setModal, collection}: ModalProps) => {
 
     const callAddOrgFn = ({collection, values, itemsArr}) => {
         const addOrg = firebase.functions().httpsCallable('addOrg');

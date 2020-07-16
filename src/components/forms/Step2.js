@@ -1,7 +1,11 @@
 import React from 'react';
 import SelectInput from './SelectInput';
 
-const Step2 = ({values}) => {
+type Step2Props = {
+    values: Object
+}
+
+const Step2 = ({values}: Step2Props) => {
     const options = [1,2,3,4,5];
     return (
         <div className="step-2">

@@ -3,7 +3,13 @@ import CommonPanel from './CommonPanel';
 import OrgPanel from './OrgPanel';
 import UsersPanel from './UsersPanel';
 
-const MainPanel = ({uid, currentList, setDeletionModal}) => {
+type PanelProps = {
+    uid: string,
+    currentList: string,
+    setDeletionModal: Function
+}
+
+const MainPanel = ({uid, currentList, setDeletionModal}: PanelProps) => {
     
     return (
         <>

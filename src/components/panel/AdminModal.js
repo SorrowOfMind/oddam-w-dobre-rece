@@ -21,7 +21,12 @@ const modalVariant = {
     }
 }
 
-const AdminModal = ({modal, setModal}) => {
+type ModalProps = {
+    modal: boolean,
+    setModal: Function,
+}
+
+const AdminModal = ({modal, setModal}: ModalProps) => {
     const [adminEmail, setAdminEmail] = useState('');
 
     const handleChange = e => setAdminEmail(e.target.value);
